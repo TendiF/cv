@@ -15,6 +15,10 @@
         text-align: left;
     }
 }
+p{
+    font-family: 'Poppins', sans-serif;
+    opacity: 0.8;
+}
 body{
     margin:0;
 }
@@ -26,6 +30,9 @@ body{
     padding: 30px;
     border: 1px solid gainsboro;
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+.container:not(:first-child){
+    margin-top:50px;
 }
 .container-left, .container-right{
     display: inline-block;
@@ -102,7 +109,7 @@ h1, h2, p, h3, h4 {
     width: 100px;
 }
 ._experience > div:last-child {
-    max-width: 300px;
+    max-width: 400px;
     margin-left: 25px;
 }
 ._experience > div:last-child > p:first-of-type{
@@ -125,6 +132,11 @@ h1, h2, p, h3, h4 {
     display: inline-block;
 }
 ._porto {
+    margin-top: 50px;
+    margin-left:20px;
+    margin-right:10px;
+}
+._porto:first-of-type {
     margin-top:20px;
 }
 ._porto > div > * {
