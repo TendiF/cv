@@ -50,10 +50,10 @@ body{
 ._profile{
     width: 100px;
 }
-._github_link > img{
+._social_media_link > img{
     width:50px;
 }
-._github_link > a {
+._social_media_link > a {
     position: relative;
     bottom: 20px;
     text-decoration: none;
