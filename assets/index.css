@@ -271,3 +271,9 @@ h1, h2, p, h3, h4 {
     text-align: center;
     margin-top: 80px;
 }
+._name > h1 {
+    margin-bottom: 0px;
+}
+._name > h2 { 
+    margin-top:0px;
+}
