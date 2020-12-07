@@ -16,6 +16,10 @@
     }
 }
 
+._tech:nth-child(6) {
+    margin-left: -5px;
+}
+
 p{
     font-family: 'Dosis', sans-serif;
     opacity: 0.8;
@@ -276,4 +280,19 @@ h1, h2, p, h3, h4 {
 }
 ._name > h2 { 
     margin-top:0px;
+}
+
+._tech > div > h4, ._tech > div > p {
+    margin: 0px;
+}
+
+._tech{
+    display: flex;
+    align-items: center;
+}
+
+._techs {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
 }
