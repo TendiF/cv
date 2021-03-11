@@ -103,14 +103,13 @@ h1, h2, p, h3, h4 {
     margin-top:10px;
 }
 ._experience {
-    margin-top: 20px;
+    display: flex;
+    align-items: center;
 }
 ._experience > div {
     display: inline-block;
 }
 ._experience > div:first-child {
-    position: relative;
-    bottom:35px;
     text-align: center;
     opacity: 0.6;
     width: 100px;
