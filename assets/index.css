@@ -126,7 +126,7 @@ h1, h2, p, h3, h4 {
     margin-top: 30px;
 }
 ._tech {
-    margin: 15px;
+    margin: 26px;
     display: inline-block;
 }
 ._tech > img {
@@ -269,7 +269,7 @@ h1, h2, p, h3, h4 {
 }
 
 ._title_link{
-    font-family: 'Dosis', sans-serif;
+    font-family: -apple-system, sans-serif;
     font-weight: 300;
     text-align: center;
     margin-top: 80px;
@@ -294,4 +294,17 @@ h1, h2, p, h3, h4 {
     display: flex;
     flex-wrap: wrap;
     justify-content: space-evenly;
+}
+
+.tech_exp {
+    display:flex; 
+    align-items:center; 
+}
+
+.tech_exp > a {
+    text-decoration: none;
+}
+
+.tech_exp > h2 {
+    margin-right: 10px;
 }
