@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://pixijs.download/v7.3.3/pixi.min.js"></script>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <title>Tendi Firmansyah - CV</title>
+</head>
+<body class="bg-gray-100">
+
+    <div class="container mx-auto p-8">
+
+        <!-- Header Section -->
+        <header class="text-center mb-8">
+            <h1 class="text-4xl font-bold">Tendi Firmansyah</h1>
+            <p class="text-gray-500">Product Developer</p>
+        </header>
+
+        <div class="flex flex-wrap justify-between">
+            <!-- Contact Information -->
+            <section class="mb-8">
+                <h2 class="text-2xl font-bold mb-4">Contact Information</h2>
+                <ul>
+                    <li class="flex items-center mb-2">
+                        <svg class="w-6 h-6 mr-2 text-gray-500" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 19l9 2-9-18-9 18 9-2zm0 0v-8"></path></svg>
+                        tendifirmansyah30@gmail.com
+                    </li>
+                    <li class="flex items-center">
+                        <svg class="w-6 h-6 mr-2 text-gray-500" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 19l9 2-9-18-9 18 9-2zm0 0v-8"></path></svg>
+                        (62) 89632462007
+                    </li>
+                </ul>
+            </section>
+
+            <!-- Work Experience Section -->
+            <section class="mb-8">
+                <h2 class="text-2xl font-bold mb-4">Work Experience</h2>
+                <div class="mb-4">
+                    <h3 class="text-xl font-bold">Internship</h3>
+                    <p class="text-gray-500">PT Arkamaya - Oct 2016 to Oct 2016</p>
+                    <ul class="list-disc ml-5 text-gray-500">
+                        <li>was involved in the admin page for the client internal app</li>
+                        <li>and report the progress to senior dev</li>
+                    </ul>
+                </div>
+                <div class="mb-4">
+                    <h3 class="text-xl font-bold">Full Stack Developer</h3>
+                    <p class="text-gray-500">Sagara Technology - Dec 2018 to Jun 2021</p>
+                    <ul class="list-disc ml-5 text-gray-500">
+                        <li>Collaborating with UI/UX Designer</li>
+                        <li>Design Database from requested feature</li>
+                        <li>Create backend and Frontend code make sure that is what the client wants</li>
+                        <li>Deploy code to the dev and then production server after passing the test</li>
+                        <li>Meeting with the client make suggest, discuss and next execution about feature</li>
+                        <li>Make sure the server is running well maintenance or upgrade when needed</li>
+                    </ul>
+                </div>
+                <div class="mb-4">
+                    <h3 class="text-xl font-bold">Full Stack Developer</h3>
+                    <p class="text-gray-500">Tatsu Works Pte. Ltd. - May 2021 to Sep 2021</p>
+                    <ul class="list-disc ml-5 text-gray-500">
+                        <li>Collaborating with UI/UX Designer</li>
+                        <li>Maintance existing web app</li>
+                        <li>Create Web Game application</li>
+                    </ul>
+                </div>
+                <div class="mb-4">
+                    <h3 class="text-xl font-bold">Software Developer</h3>
+                    <p class="text-gray-500">Vouch SG Pte. Ltd - Oct 2021 to Present</p>
+                    <ul class="list-disc ml-5 text-gray-500">
+                        <li>Collaborating with PM</li>
+                        <li>Lead product development with other 4 developer</li>
+                        <li>Aim better experience for both hotel owner, employees and guests through tech</li>
+                        <li>Maintance existing web app</li>
+                        <li>Create new product & feature to provide what customer needed also discuss with other dev</li>
+                    </ul>
+                </div>
+            </section>
+        </div>
+
+    </div>
+
+    <div class="w-screen h-screen fixed top-0 left-0" id="game-container"></div>
+    <script src="assets/game.js"></script>
+</body>
+</html>
