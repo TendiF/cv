@@ -129,7 +129,13 @@ let character = {
     sprite: undefined,
 }
 
+let targetCoordinate = {
+    x: null,
+    y: null
+}
+
 let keyboard = {}
+
 
 const spritesheetBasicCharacter = new PIXI.Spritesheet(
     PIXI.BaseTexture.from("assets/img/basic_character_sprites.png"),
@@ -140,7 +146,7 @@ const spritesheetBasicCharacter = new PIXI.Spritesheet(
 async function renderCharacter(animation = "walkDown") {
     // Create the SpriteSheet from data and image
     if (character.sprite) character.sprite.play();
-
+    
     if (character.animation !== animation) {
 
         let oldX = 0;
@@ -172,9 +178,11 @@ async function renderCharacter(animation = "walkDown") {
 }
 
 window.addEventListener("keydown", (e) => {
+    targetCoordinate = {
+        x: null,
+        y: null
+    }
     keyboard[e.key] = true;
-    console.log('keyboard', keyboard)
-
 });
 
 window.addEventListener("keyup", (e) => {
@@ -187,28 +195,74 @@ window.addEventListener("resize", () => {
     app.renderer.resize(gameContainer.clientWidth, gameContainer.clientHeight);
 });
 
-
 function update() {
     // Move character based on keyboard input
-    const speed = 2.5;
+    const speed = 3;
     if (character.sprite) {
+        let maxHeightX = character.sprite.x < gameContainer.clientWidth - 100
+        let minHeightX = character.sprite.x > -60
+        let maxHeightY = character.sprite.y < gameContainer.clientHeight - 120
+        let minHeightY = character.sprite.y > -50
+        // move char by arrow button
         if (keyboard["ArrowLeft"]) {
-            character.sprite.x -= speed;
-            renderCharacter("walkLeft");
+            if(minHeightX) character.sprite.x -= speed;
+            if(!keyboard["ArrowDown"] && !keyboard["ArrowUp"]) renderCharacter("walkLeft");
         }
         if (keyboard["ArrowRight"]) {
-            character.sprite.x += speed;
-            renderCharacter("walkRight");
+            if(maxHeightX) character.sprite.x += speed;
+            if(!keyboard["ArrowDown"] && !keyboard["ArrowUp"]) renderCharacter("walkRight");
         }
         if (keyboard["ArrowUp"]) {
-            character.sprite.y -= speed;
+            if(minHeightY) character.sprite.y -= speed;
             renderCharacter("walkUp");
         }
         if (keyboard["ArrowDown"]) {
-            character.sprite.y += speed;
+            if(maxHeightY) character.sprite.y += speed;
             renderCharacter("walkDown");
         }
+
+        // move char by targetCoordinate
+        let xLowerThanTarget = typeof targetCoordinate.x === 'number' && character.sprite.x < targetCoordinate.x
+        let yLowerThanTarget = typeof targetCoordinate.y === 'number' && character.sprite.y < targetCoordinate.y
+        let xHigerThanTarget = typeof targetCoordinate.x === 'number' && character.sprite.x > targetCoordinate.x
+        let yHigherThanTarget = typeof targetCoordinate.y === 'number' && character.sprite.y > targetCoordinate.y
+        if(xLowerThanTarget && yLowerThanTarget){
+            renderCharacter("walkDown")
+        }else if(xLowerThanTarget){
+            renderCharacter("walkRight")
+        }
+
+        if(xHigerThanTarget && yHigherThanTarget){
+            renderCharacter("walkUp")
+        }else if(xHigerThanTarget){
+            renderCharacter("walkLeft")
+        }
+
+        if(xLowerThanTarget && maxHeightX){
+            character.sprite.x += speed
+        }
+        
+        if(yLowerThanTarget && maxHeightY){
+            character.sprite.y += speed
+        }
+
+        if(xHigerThanTarget && minHeightX){
+            character.sprite.x -= speed
+        }
+        
+        if(yHigherThanTarget && minHeightY){
+            character.sprite.y -= speed
+        }
+
+        if(character.sprite.x === targetCoordinate.x && character.sprite.y === targetCoordinate.y){
+            renderCharacter('walkDown')
+            if (character.sprite) character.sprite.stop();
+        }
     }
+}
+
+function roundToNearest6(number) {
+    return Math.round(number / 6) * 6;
 }
 
 async function initGame(){
@@ -216,6 +270,16 @@ async function initGame(){
     gameContainer.appendChild(app.view);
     renderCharacter("walkDown");
     app.ticker.add(update);
+
+    app.view.addEventListener('click', event => {
+        // Get the mouse coordinates relative to the application view
+        const mouseX = event.clientX - app.view.getBoundingClientRect().left;
+        const mouseY = event.clientY - app.view.getBoundingClientRect().top;
+
+        // Log the x and y coordinates
+        targetCoordinate.x = roundToNearest6(mouseX - 100)
+        targetCoordinate.y = roundToNearest6(mouseY - 100)
+    })
 }
 
 initGame()
