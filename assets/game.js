@@ -507,7 +507,7 @@ function roundToNearest6(number) {
     return Math.round(number / 6) * 6;
 }
 
-async function renderDialog(xParam = 0, yParam = 0, expression = 'cheerSmile', dialogtext = 'Can go anywhere,  just click...'){
+async function renderDialog(xParam = 0, yParam = 0, expression = 'cheerSmile', dialogtext = 'play with me click anywhere'){
     removeDialog()
     let dialogPositionX = xParam + 120
     let dialogPositionY = yParam + 50
@@ -611,7 +611,7 @@ async function initGame(){
             }else if (clicked >= 5){
                 goodBye()
             }
-        }, 4000)
+        }, 2000)
     })
 
     renderDialog(character.sprite.x, character.sprite.y)
@@ -621,7 +621,7 @@ async function initGame(){
         }else if (clicked >= 5){
             goodBye()
         }
-    }, 4000)
+    }, 2000)
 }
 
 initGame()
