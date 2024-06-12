@@ -575,7 +575,7 @@ function goodBye(){
     renderDialog(character.sprite.x, character.sprite.y, 'shakeEar', 'Ya good bye...')
     setTimeout(() => {
         gameContainer.className = "hidden"
-        localStorage.setItem('HIDE_GAME', 'hide')
+        sessionStorage.setItem('HIDE_GAME', 'hide')
     }, 1500)
 }
 
@@ -583,7 +583,7 @@ async function initGame(){
     await spritesheetBasicCharacter.parse();
     await spritesheetBasicEkspresionCharacter.parse()
 
-    if(localStorage.getItem('HIDE_GAME')){
+    if(sessionStorage.getItem('HIDE_GAME')){
         gameContainer.className = "hidden"
     }
 
