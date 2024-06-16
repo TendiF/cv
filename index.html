@@ -1,256 +1,447 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <script src="https://pixijs.download/v7.3.3/pixi.min.js"></script>
-    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <link
+      href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css"
+      rel="stylesheet"
+    />
+    <link href="/assets/index.css" rel="stylesheet" />
     <title>Tendi Firmansyah - CV</title>
-</head>
-<body class="bg-gray-100">
-
+  </head>
+  <body class="bg-white dark:bg-black">
     <div class="container mx-auto p-8">
+      <!-- Header Section -->
+      <header class="text-center mb-8">
+        <h1 class="text-6xl font-bold">Tendi Firmansyah</h1>
+        <p class="text-xl text-gray-500">https://tendif.github.io/cv/</p>
+        <p class="text-gray-500">Product Developer</p>
+      </header>
+      <div class="grid grid-cols-1 lg:grid-cols-2">
+        <div>
+          <!-- Contact Information -->
+          <section class="mb-8">
+            <h2 class="text-2xl font-bold mb-4">About Me</h2>
+						<div class="block lg:flex">
+							<div aria-hidden="true" class="rounded-lg overflow-hidden w-44 lg:mr-3">
+								<img
+									loading="lazy"
+									src="./assets/img/profile.jpg"
+									class="object-cover h-48 w-full"
+								/>
+							</div>
+							<ul>
+								<li class="flex items-center mb-2">
+									<svg class="w-6 h-6 mr-2 text-gray-500" fill="#000000" width="800px" height="800px" viewBox="0 -9.31 56.223 56.223" xmlns="http://www.w3.org/2000/svg">
+										<path id="email_unread" data-name="email unread" d="M798.377,169.859h.012a2.16,2.16,0,0,0,1.181-.346l.092-.059.063-.039,1.071-.887,25.563-21.094a.3.3,0,0,0-.239-.123H770.492a.291.291,0,0,0-.183.066l26.745,22.045A2.1,2.1,0,0,0,798.377,169.859ZM770.2,150.3v31.268l19.159-15.476Zm37.084,15.9,19.139,15.38V150.4Zm-6.085,5.021a4.559,4.559,0,0,1-5.619.005l-4.388-3.619L770.2,184.558v.053a.3.3,0,0,0,.3.3h55.625a.3.3,0,0,0,.3-.3v-.049l-20.974-16.852Z" transform="translate(-770.195 -147.311)"/>
+									</svg>
+									tendifirmansyah30@gmail.com
+								</li>
+								<li class="flex items-center mb-2">
+									<svg
+										class="w-6 h-6 mr-2 text-gray-500"
+										fill="none"
+										stroke="currentColor"
+										viewBox="0 0 24 24"
+										xmlns="http://www.w3.org/2000/svg"
+									>
+										<path
+											d="M10.0376 5.31617L10.6866 6.4791C11.2723 7.52858 11.0372 8.90532 10.1147 9.8278C10.1147 9.8278 10.1147 9.8278 10.1147 9.8278C10.1146 9.82792 8.99588 10.9468 11.0245 12.9755C13.0525 15.0035 14.1714 13.8861 14.1722 13.8853C14.1722 13.8853 14.1722 13.8853 14.1722 13.8853C15.0947 12.9628 16.4714 12.7277 17.5209 13.3134L18.6838 13.9624C20.2686 14.8468 20.4557 17.0692 19.0628 18.4622C18.2258 19.2992 17.2004 19.9505 16.0669 19.9934C14.1588 20.0658 10.9183 19.5829 7.6677 16.3323C4.41713 13.0817 3.93421 9.84122 4.00655 7.93309C4.04952 6.7996 4.7008 5.77423 5.53781 4.93723C6.93076 3.54428 9.15317 3.73144 10.0376 5.31617Z"
+											fill="#1C274C"
+										/>
+									</svg>
+									(62) 89632462007
+								</li>
+								<li class="flex items-center mb-2">
+									<svg
+										class="w-6 h-6 mr-2 text-gray-500"
+										xmlns="http://www.w3.org/2000/svg"
+										x="0px"
+										y="0px"
+										width="100"
+										height="100"
+										viewBox="0 0 50 50"
+									>
+										<path
+											d="M41,4H9C6.24,4,4,6.24,4,9v32c0,2.76,2.24,5,5,5h32c2.76,0,5-2.24,5-5V9C46,6.24,43.76,4,41,4z M17,20v19h-6V20H17z M11,14.47c0-1.4,1.2-2.47,3-2.47s2.93,1.07,3,2.47c0,1.4-1.12,2.53-3,2.53C12.2,17,11,15.87,11,14.47z M39,39h-6c0,0,0-9.26,0-10 c0-2-1-4-3.5-4.04h-0.08C27,24.96,26,27.02,26,29c0,0.91,0,10,0,10h-6V20h6v2.56c0,0,1.93-2.56,5.81-2.56 c3.97,0,7.19,2.73,7.19,8.26V39z"
+										></path>
+									</svg>
+									<a
+										style="color: black"
+										href="https://www.linkedin.com/in/tendi-firmansyah-53ab06b8"
+									>
+										tendi-firmansyah-53ab06b8
+									</a>
+								</li>
+								<li class="flex items-center">
+									<svg
+										class="w-6 h-6 mr-2 text-gray-500"
+										xmlns="http://www.w3.org/2000/svg"
+										x="0px"
+										y="0px"
+										width="100"
+										height="100"
+										viewBox="0 0 50 50"
+									>
+										<path
+											d="M 50.0625 10.4375 C 48.214844 11.257813 46.234375 11.808594 44.152344 12.058594 C 46.277344 10.785156 47.910156 8.769531 48.675781 6.371094 C 46.691406 7.546875 44.484375 8.402344 42.144531 8.863281 C 40.269531 6.863281 37.597656 5.617188 34.640625 5.617188 C 28.960938 5.617188 24.355469 10.21875 24.355469 15.898438 C 24.355469 16.703125 24.449219 17.488281 24.625 18.242188 C 16.078125 17.8125 8.503906 13.71875 3.429688 7.496094 C 2.542969 9.019531 2.039063 10.785156 2.039063 12.667969 C 2.039063 16.234375 3.851563 19.382813 6.613281 21.230469 C 4.925781 21.175781 3.339844 20.710938 1.953125 19.941406 C 1.953125 19.984375 1.953125 20.027344 1.953125 20.070313 C 1.953125 25.054688 5.5 29.207031 10.199219 30.15625 C 9.339844 30.390625 8.429688 30.515625 7.492188 30.515625 C 6.828125 30.515625 6.183594 30.453125 5.554688 30.328125 C 6.867188 34.410156 10.664063 37.390625 15.160156 37.472656 C 11.644531 40.230469 7.210938 41.871094 2.390625 41.871094 C 1.558594 41.871094 0.742188 41.824219 -0.0585938 41.726563 C 4.488281 44.648438 9.894531 46.347656 15.703125 46.347656 C 34.617188 46.347656 44.960938 30.679688 44.960938 17.09375 C 44.960938 16.648438 44.949219 16.199219 44.933594 15.761719 C 46.941406 14.3125 48.683594 12.5 50.0625 10.4375 Z"
+										></path>
+									</svg>
+									<a
+										style="color: black"
+										href="https://twitter.com/TendiFirmansyah"
+										>TendiFirmansyah</a
+									>
+								</li>
+							</ul>
+						</div>
+						<div class="flex items-center mt-1">
+							<div
+								class="text-sm font-semibold leading-6 text-gray-900 cursor-pointer"
+							>
+								Show more <span aria-hidden="true">→</span>
+							</div>
+						</div>
 
-        <!-- Header Section -->
-        <header class="text-center mb-8">
-            <h1 class="text-4xl font-bold">Tendi Firmansyah</h1>
-            <p class="text-xl text-gray-500">https://tendif.github.io/cv/</p>
-            <p class="text-gray-500">Product Developer</p>
-        </header>
-        <div class="grid grid-cols-1 lg:grid-cols-2">
-            <div>
-                <!-- Contact Information -->
-                <section class="mb-8">
-                    <h2 class="text-2xl font-bold mb-4">Contact Information</h2>
-                    <ul>
-                        <li class="flex items-center mb-2">
-                            <svg class="w-6 h-6 mr-2 text-gray-500" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" clip-rule="evenodd" d="M3.75 5.25L3 6V18L3.75 18.75H20.25L21 18V6L20.25 5.25H3.75ZM4.5 7.6955V17.25H19.5V7.69525L11.9999 14.5136L4.5 7.6955ZM18.3099 6.75H5.68986L11.9999 12.4864L18.3099 6.75Z" fill="#080341"/></svg>
-                            tendifirmansyah30@gmail.com
-                        </li>
-                        <li class="flex items-center mb-2">
-                            <svg class="w-6 h-6 mr-2 text-gray-500" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M10.0376 5.31617L10.6866 6.4791C11.2723 7.52858 11.0372 8.90532 10.1147 9.8278C10.1147 9.8278 10.1147 9.8278 10.1147 9.8278C10.1146 9.82792 8.99588 10.9468 11.0245 12.9755C13.0525 15.0035 14.1714 13.8861 14.1722 13.8853C14.1722 13.8853 14.1722 13.8853 14.1722 13.8853C15.0947 12.9628 16.4714 12.7277 17.5209 13.3134L18.6838 13.9624C20.2686 14.8468 20.4557 17.0692 19.0628 18.4622C18.2258 19.2992 17.2004 19.9505 16.0669 19.9934C14.1588 20.0658 10.9183 19.5829 7.6677 16.3323C4.41713 13.0817 3.93421 9.84122 4.00655 7.93309C4.04952 6.7996 4.7008 5.77423 5.53781 4.93723C6.93076 3.54428 9.15317 3.73144 10.0376 5.31617Z" fill="#1C274C"/></svg>
-                            (62) 89632462007
-                        </li>
-                        <li class="flex items-center mb-2">
-                            <svg class="w-6 h-6 mr-2 text-gray-500" xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" width="100" height="100" viewBox="0 0 50 50">
-                                <path d="M41,4H9C6.24,4,4,6.24,4,9v32c0,2.76,2.24,5,5,5h32c2.76,0,5-2.24,5-5V9C46,6.24,43.76,4,41,4z M17,20v19h-6V20H17z M11,14.47c0-1.4,1.2-2.47,3-2.47s2.93,1.07,3,2.47c0,1.4-1.12,2.53-3,2.53C12.2,17,11,15.87,11,14.47z M39,39h-6c0,0,0-9.26,0-10 c0-2-1-4-3.5-4.04h-0.08C27,24.96,26,27.02,26,29c0,0.91,0,10,0,10h-6V20h6v2.56c0,0,1.93-2.56,5.81-2.56 c3.97,0,7.19,2.73,7.19,8.26V39z"></path>
-                            </svg>
-                            <a style="color:black;" href="https://www.linkedin.com/in/tendi-firmansyah-53ab06b8">
-                                tendi-firmansyah-53ab06b8
-                            </a>
-                        </li>
-                        <li class="flex items-center">
-                            <svg class="w-6 h-6 mr-2 text-gray-500" xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" width="100" height="100" viewBox="0 0 50 50">
-                                <path d="M 50.0625 10.4375 C 48.214844 11.257813 46.234375 11.808594 44.152344 12.058594 C 46.277344 10.785156 47.910156 8.769531 48.675781 6.371094 C 46.691406 7.546875 44.484375 8.402344 42.144531 8.863281 C 40.269531 6.863281 37.597656 5.617188 34.640625 5.617188 C 28.960938 5.617188 24.355469 10.21875 24.355469 15.898438 C 24.355469 16.703125 24.449219 17.488281 24.625 18.242188 C 16.078125 17.8125 8.503906 13.71875 3.429688 7.496094 C 2.542969 9.019531 2.039063 10.785156 2.039063 12.667969 C 2.039063 16.234375 3.851563 19.382813 6.613281 21.230469 C 4.925781 21.175781 3.339844 20.710938 1.953125 19.941406 C 1.953125 19.984375 1.953125 20.027344 1.953125 20.070313 C 1.953125 25.054688 5.5 29.207031 10.199219 30.15625 C 9.339844 30.390625 8.429688 30.515625 7.492188 30.515625 C 6.828125 30.515625 6.183594 30.453125 5.554688 30.328125 C 6.867188 34.410156 10.664063 37.390625 15.160156 37.472656 C 11.644531 40.230469 7.210938 41.871094 2.390625 41.871094 C 1.558594 41.871094 0.742188 41.824219 -0.0585938 41.726563 C 4.488281 44.648438 9.894531 46.347656 15.703125 46.347656 C 34.617188 46.347656 44.960938 30.679688 44.960938 17.09375 C 44.960938 16.648438 44.949219 16.199219 44.933594 15.761719 C 46.941406 14.3125 48.683594 12.5 50.0625 10.4375 Z"></path>
-                            </svg>
-                            <a style="color:black;" href="https://twitter.com/TendiFirmansyah">TendiFirmansyah</a>
-                        </li>
-                    </ul>
-                </section>
+          </section>
 
-                <!-- Work Experience Section -->
-                <section class="mb-8">
-                    <h2 class="text-2xl font-bold mb-4">Work Experience</h2>
-                    <div class="mb-4">
-                        <h3 class="text-xl font-bold">Software Developer</h3>
-                        <p class="text-gray-500">Vouch SG Pte. Ltd - Oct 2021 to Present</p>
-                        <ul class="list-disc ml-5 text-gray-500">
-                            <li>Create new product & feature to provide what customer needed also discuss with other dev</li>
-                            <li>Maintance existing web app</li>
-                            <li>Aim better experience for both hotel owner, employees and guests through tech</li>
-                            <li>Lead product development with other 4 developer</li>
-                            <li>Collaborating with PM</li>
-                        </ul>
-                    </div>
-                    <div class="mb-4">
-                        <h3 class="text-xl font-bold">Full Stack Developer</h3>
-                        <p class="text-gray-500">Tatsu Works Pte. Ltd. - May 2021 to Sep 2021</p>
-                        <ul class="list-disc ml-5 text-gray-500">
-                            <li>Create Web Game application</li>
-                            <li>Maintance existing web app</li>
-                            <li>Collaborating with UI/UX Designer</li>
-                        </ul>
-                    </div>
-                    <div class="mb-4">
-                        <h3 class="text-xl font-bold">Full Stack Developer</h3>
-                        <p class="text-gray-500">Sagara Technology - Dec 2018 to Jun 2021</p>
-                        <ul class="list-disc ml-5 text-gray-500">
-                            <li>Make sure the server is running well maintenance or upgrade when needed</li>
-                            <li>Meeting with the client make suggest, discuss and next execution about feature</li>
-                            <li>Deploy code to the dev and then production server after passing the test</li>
-                            <li>Create backend and Frontend code make sure that is what the client wants</li>
-                            <li>Design Database from requested feature</li>
-                            <li>Collaborating with UI/UX Designer</li>
-                        </ul>
-                    </div>
-                    <div class="mb-4">
-                        <h3 class="text-xl font-bold">Web Developer</h3>
-                        <p class="text-gray-500">PT Idekreatif Menusa Teknologi - May 2017 to Nov 2018</p>
-                        <ul class="list-disc ml-5 text-gray-500">
-                            <li>Meeting with the client make suggest, discuss and next execution about feature</li>
-                            <li>Create backend and Frontend code make sure that is what the client wants</li>
-                            <li>Design Database  from requested feature</li>
-                        </ul>
-                    </div>
-                    <div class="mb-4">
-                        <h3 class="text-xl font-bold">Internship</h3>
-                        <p class="text-gray-500">PT Arkamaya - Oct 2016 to Oct 2016</p>
-                        <ul class="list-disc ml-5 text-gray-500">
-                            <li>and report the progress to senior dev</li>
-                            <li>was involved in the admin page for the client internal app</li>
-                        </ul>
-                    </div>
-                </section>
+          <!-- Work Experience Section -->
+          <section class="mb-8">
+            <h2 class="text-4xl font-bold mb-4">Work Experience</h2>
+            <div class="mb-4">
+              <h3 class="text-xl font-bold">Software Developer</h3>
+              <p class="text-gray-500">
+                Vouch SG Pte. Ltd - Oct 2021 to Present
+              </p>
+              <ul class="list-disc ml-5 text-gray-500">
+                <li>
+                  Create new product & feature to provide what customer needed
+                  also discuss with other dev
+                </li>
+                <li>Maintance existing web app</li>
+                <li>
+                  Aim better experience for both hotel owner, employees and
+                  guests through tech
+                </li>
+                <li>Lead product development with other 4 developer</li>
+                <li>Collaborating with PM</li>
+              </ul>
             </div>
-            <div>
-                <section class="mb-8">
-                    <h2 class="text-2xl font-bold mb-4">Tech Stacks</h2>
-                    <div class="flex flex-wrap justify-around">
-                        <div class="flex items-center">
-                            <h3 class="text-lg font-bold mr-2">TS.ED</h3>
-                            <p class="text-gray-500">2 years</p>
-                        </div>
-                        <div class="flex items-center">
-                            <h3 class="text-lg font-bold mr-2">Nodejs</h3>
-                            <p class="text-gray-500">2 years</p>
-                        </div>
-                        <div class="flex items-center">
-                            <h3 class="text-lg font-bold mr-2">MongoDB</h3>
-                            <p class="text-gray-500">2 years</p>
-                        </div>
-                        <div class="flex items-center">
-                            <h3 class="text-lg font-bold mr-2">GRPC</h3>
-                            <p class="text-gray-500">8 Months</p>
-                        </div>
-                        <div class="flex items-center">
-                            <h3 class="text-lg font-bold mr-2">Gin Gonic</h3>
-                            <p class="text-gray-500">7 Months</p>
-                        </div>
-                        <div class="flex items-center">
-                            <h3 class="text-lg font-bold mr-2">Code Igniter</h3>
-                            <p class="text-gray-500">1 Year 2 Months</p>
-                        </div>
-                        <div class="flex items-center">
-                            <h3 class="text-lg font-bold mr-2">Laravel</h3>
-                            <p class="text-gray-500">1 Year</p>
-                        </div>
-                        <div class="flex items-center">
-                            <h3 class="text-lg font-bold mr-2">Wordpress</h3>
-                            <p class="text-gray-500">1 Year</p>
-                        </div>
-                        <div class="flex items-center">
-                            <h3 class="text-lg font-bold mr-2">Postgres</h3>
-                            <p class="text-gray-500">9 Months</p>
-                        </div>
-                        <div class="flex items-center">
-                            <h3 class="text-lg font-bold mr-2">MySQL</h3>
-                            <p class="text-gray-500">1 Year 7 Months</p>
-                        </div>
-                        <div class="flex items-center">
-                            <h3 class="text-lg font-bold mr-2">VueJs</h3>
-                            <p class="text-gray-500">2 Years</p>
-                        </div>
-                        <div class="flex items-center">
-                            <h3 class="text-lg font-bold mr-2">Swift IOS</h3>
-                            <p class="text-gray-500">5 Months</p>
-                        </div>
-                        <div class="flex items-center">
-                            <h3 class="text-lg font-bold mr-2">Docker</h3>
-                            <p class="text-gray-500">8 Months</p>
-                        </div>
-                        <div class="flex items-center">
-                            <h3 class="text-lg font-bold mr-2">React</h3>
-                            <p class="text-gray-500">1 Year</p>
-                        </div>
-                    </div>
-
-                </section>
-                <section class="mb-8">
-                    <h2 class="text-2xl font-bold mb-4">Portofolio</h2>
-                    <div class="mb-4">
-                        <div class="flex"><h3 class="text-xl font-bold mr-2">Sosialita Customer </h3> <a target="_blank" href="assets/video/sosialita_customer.mp4">https://link-attachment</a></div>
-                        <p class="text-gray-500">Reactjs - NodeJS - Tailwindcss</p>
-                        <p class="text-gray-500">website so anyone can sell branded fashion items easier</p>
-                    </div>
-                    <div class="mb-4">
-                        <div class="2xl:flex"><h3 class="text-xl font-bold mr-2">Hotel Operations & Guest Experience App </h3> <a target="_blank" href="https://www.vouch-technologies.com/">https://www.vouch-technologies.com/</a></div>
-                        <p class="text-gray-500">Ts.ed - Vuejs - Mongodb</p>
-                        <p class="text-gray-500">The hotel staff management system enhances internal workflows, making them more effective and efficient, while also providing a guest platform to ensure a great experience when accessing hotel facilities.</p>
-                    </div>
-                    <div class="mb-4">
-                        <h3 class="text-xl font-bold">RCS Hukumonline.com</h3>
-                        <p class="text-gray-500">Elastic Search - Reactjs - NodeJS</p>
-                        <p class="text-gray-500">RCS app service by Hukumonline that manage task with dashboard monitoring</p>
-                    </div>
-                    <div class="mb-4">
-                        <h3 class="text-xl font-bold">Warung Umat</h3>
-                        <p class="text-gray-500">ReactJs</p>
-                        <p class="text-gray-500">A web platform that bridge between manufacturer and reseller</p>
-                    </div>
-                    <div class="mb-4">
-                        <div class="flex"><h3 class="text-xl font-bold mr-2">Teknologi.id</h3> <a target="_blank" href="https://teknologi.id/">https://teknologi.id/</a></div>
-                        <p class="text-gray-500">Laravel - MySQL</p>
-                        <p class="text-gray-500">Media platform that bring latest technology news</p>
-                    </div>
-                    <div class="mb-4">
-                        <h3 class="text-xl font-bold">Canopy Plus</h3>
-                        <p class="text-gray-500">Laravel - Vuejs - MySQL</p>
-                        <p class="text-gray-500">Broker/Insurance and Surveyor pool that we bridge through Canopy to help them work together with trust in Australia</p>
-                    </div>
-                    <div class="mb-4">
-                        <div class="flex"><h3 class="text-xl font-bold mr-2">JOVEE.ID </h3> <a target="_blank" href="https://jovee.id/">https://jovee.id/</a></div>
-                        <p class="text-gray-500">ReactJS - .NET - HTML - CSS</p>
-                        <p class="text-gray-500">Collaborating with Jira, work to contribute to Backend & IOS team with large team developers its a new experience for me to work with SCRUM and a little bit know how we work together with so many developers in the team.</p>
-                    </div>
-                    <div class="mb-4">
-                        <div class="flex"><h3 class="text-xl font-bold mr-2">RIIO </h3> <a target="_blank" href="https://www.dropbox.com/home/Journey/RIIO">https://link-attachment</a></div>
-                        <p class="text-gray-500">ReactJS - .NET - HTML - CSS</p>
-                        <p class="text-gray-500">RIIO third party money transfer services to various banks and currencies using React for a user and admin display.</p>
-                    </div>
-                    <div class="mb-4">
-                        <h3 class="text-xl font-bold">ROBSJOBS</h3>
-                        <p class="text-gray-500">Laravel - MYSQL - HTML - CSS</p>
-                        <p class="text-gray-500">Robsjobs is a job portal website, with international vacancies accommodate jobseeker and employee with the unique business flow for two of them.</p>
-                    </div>
-                    <div class="mb-4">
-                        <h3 class="text-xl font-bold">FINDSOR</h3>
-                        <p class="text-gray-500">GOLANG - POSTGRES - QUASARJS</p>
-                        <p class="text-gray-500">Manage customer internal data who involved in insurance or investment, use by Agen and internal Admin for easier data flow, custom notification needed, report, chat, etc.</p>
-                    </div>
-                    <div class="mb-4">
-                        <h3 class="text-xl font-bold">AWCF Landing Page</h3>
-                        <p class="text-gray-500">CODEIGNITER - MYSQL - HTML - CSS</p>
-                        <p class="text-gray-500">Asian Workers’ Compensation Forum (AWCF) was created in August 2010 as a platform for social security organizations from member countries to share related information and experiences by means of sessions, training programs, seminars, forums, mostly through virtual platform.</p>
-                    </div>
-                    <div class="mb-4">
-                        <h3 class="text-xl font-bold">CUNSOMER IDENTITY & ACCESS MANAGEMENT</h3>
-                        <p class="text-gray-500">ANGULAR - LUMEN - MYSQ</p>
-                        <p class="text-gray-500">change website duniagames.co.id auth, register, profile management data flow, security in backend and frontend.</p>
-                    </div>
-                    <div class="mb-4">
-                        <h3 class="text-xl font-bold">BAZARUMAT</h3>
-                        <p class="text-gray-500">WORDPRESS - MYSQL - HTML - CSS</p>
-                        <p class="text-gray-500">Managing Product Selling by PT Afra Insan Amanah , management product, Customer, Reporting for more than thousand Customer Agen and Reseller coding by 4 person in team.</p>
-                    </div>
-                    <div class="mb-4">
-                        <h3 class="text-xl font-bold">ITQON Bussiness</h3>
-                        <p class="text-gray-500">CODEIGNITER - MYSQL - HTML - CSS</p>
-                        <p class="text-gray-500">Travel Hajj & Umrah CRM web application for managing Customer from followup, payment, scheduling , determine room etc coding by 1 person in team.</p>
-                    </div>
-                    <div class="mb-4">
-                        <h3 class="text-xl font-bold">Audiotext Pluginesia</h3>
-                        <p class="text-gray-500">WORDPRESS - MYSQL - HTML - CSS</p>
-                        <p class="text-gray-500">Managing Product Selling by PT Afra , management product, Customer, Reporting for more than thousand Customer Agen and Reseller coding by 4 person in team.</p>
-                    </div>
-                    
-                </section>
+            <div class="mb-4">
+              <h3 class="text-xl font-bold">Full Stack Developer</h3>
+              <p class="text-gray-500">
+                Tatsu Works Pte. Ltd. - May 2021 to Sep 2021
+              </p>
+              <ul class="list-disc ml-5 text-gray-500">
+                <li>Create Web Game application</li>
+                <li>Maintance existing web app</li>
+                <li>Collaborating with UI/UX Designer</li>
+              </ul>
             </div>
+            <div class="mb-4">
+              <h3 class="text-xl font-bold">Full Stack Developer</h3>
+              <p class="text-gray-500">
+                Sagara Technology - Dec 2018 to Jun 2021
+              </p>
+              <ul class="list-disc ml-5 text-gray-500">
+                <li>
+                  Make sure the server is running well maintenance or upgrade
+                  when needed
+                </li>
+                <li>
+                  Meeting with the client make suggest, discuss and next
+                  execution about feature
+                </li>
+                <li>
+                  Deploy code to the dev and then production server after
+                  passing the test
+                </li>
+                <li>
+                  Create backend and Frontend code make sure that is what the
+                  client wants
+                </li>
+                <li>Design Database from requested feature</li>
+                <li>Collaborating with UI/UX Designer</li>
+              </ul>
+            </div>
+            <div class="mb-4">
+              <h3 class="text-xl font-bold">Web Developer</h3>
+              <p class="text-gray-500">
+                PT Idekreatif Menusa Teknologi - May 2017 to Nov 2018
+              </p>
+              <ul class="list-disc ml-5 text-gray-500">
+                <li>
+                  Meeting with the client make suggest, discuss and next
+                  execution about feature
+                </li>
+                <li>
+                  Create backend and Frontend code make sure that is what the
+                  client wants
+                </li>
+                <li>Design Database from requested feature</li>
+              </ul>
+            </div>
+            <div class="mb-4">
+              <h3 class="text-xl font-bold">Internship</h3>
+              <p class="text-gray-500">PT Arkamaya - Oct 2016 to Oct 2016</p>
+              <ul class="list-disc ml-5 text-gray-500">
+                <li>and report the progress to senior dev</li>
+                <li>
+                  was involved in the admin page for the client internal app
+                </li>
+              </ul>
+            </div>
+          </section>
         </div>
-
-
+        <div>
+          <section class="mb-8">
+            <h2 class="text-2xl font-bold mb-4">Tech Stacks</h2>
+            <div class="flex flex-wrap justify-around">
+              <div class="flex items-center">
+                <h3 class="text-lg font-bold mr-2">TS.ED</h3>
+                <p class="text-gray-500">2 years</p>
+              </div>
+              <div class="flex items-center">
+                <h3 class="text-lg font-bold mr-2">Nodejs</h3>
+                <p class="text-gray-500">2 years</p>
+              </div>
+              <div class="flex items-center">
+                <h3 class="text-lg font-bold mr-2">MongoDB</h3>
+                <p class="text-gray-500">2 years</p>
+              </div>
+              <div class="flex items-center">
+                <h3 class="text-lg font-bold mr-2">GRPC</h3>
+                <p class="text-gray-500">8 Months</p>
+              </div>
+              <div class="flex items-center">
+                <h3 class="text-lg font-bold mr-2">Gin Gonic</h3>
+                <p class="text-gray-500">7 Months</p>
+              </div>
+              <div class="flex items-center">
+                <h3 class="text-lg font-bold mr-2">Code Igniter</h3>
+                <p class="text-gray-500">1 Year 2 Months</p>
+              </div>
+              <div class="flex items-center">
+                <h3 class="text-lg font-bold mr-2">Laravel</h3>
+                <p class="text-gray-500">1 Year</p>
+              </div>
+              <div class="flex items-center">
+                <h3 class="text-lg font-bold mr-2">Wordpress</h3>
+                <p class="text-gray-500">1 Year</p>
+              </div>
+              <div class="flex items-center">
+                <h3 class="text-lg font-bold mr-2">Postgres</h3>
+                <p class="text-gray-500">9 Months</p>
+              </div>
+              <div class="flex items-center">
+                <h3 class="text-lg font-bold mr-2">MySQL</h3>
+                <p class="text-gray-500">1 Year 7 Months</p>
+              </div>
+              <div class="flex items-center">
+                <h3 class="text-lg font-bold mr-2">VueJs</h3>
+                <p class="text-gray-500">2 Years</p>
+              </div>
+              <div class="flex items-center">
+                <h3 class="text-lg font-bold mr-2">Swift IOS</h3>
+                <p class="text-gray-500">5 Months</p>
+              </div>
+              <div class="flex items-center">
+                <h3 class="text-lg font-bold mr-2">Docker</h3>
+                <p class="text-gray-500">8 Months</p>
+              </div>
+              <div class="flex items-center">
+                <h3 class="text-lg font-bold mr-2">React</h3>
+                <p class="text-gray-500">1 Year</p>
+              </div>
+            </div>
+          </section>
+          <section class="mb-8">
+            <h2 class="text-4xl font-bold mb-4">Portofolio</h2>
+            <div aria-hidden="true" class="rounded-lg overflow-hidden w-full max-h-96 mb-5">
+              <!-- <img
+                loading="lazy"
+                src="https://tailwindui.com/img/ecommerce-images/home-page-01-collection-01.jpg"
+                class="object-cover h-48 w-full"
+              /> -->
+							<div class="flex justify-around">
+								<video autoplay loop muted preload="none" class="w-48">
+									<source src="./assets/video/sosialita_customer.mp4" type="video/mp4">
+									Your browser does not support the video tag.
+								</video>
+								<img
+									src="./assets/img/sosialita1.png"
+									class="h-96"
+								/>
+							</div>
+            </div>
+            <div class="mb-4">
+              <div class="flex">
+                <h3 class="text-xl font-bold mr-2">Sosialita Customer</h3>
+                <a target="_blank" href="assets/video/sosialita_customer.mp4"
+                  >https://link-attachment</a
+                >
+              </div>
+              <p class="text-gray-500">Reactjs - NodeJS - Tailwindcss</p>
+              <p class="text-gray-500">
+                website so anyone can sell branded fashion items easier
+              </p>
+            </div>
+            <div class="mb-4">
+              <div class="2xl:flex">
+                <h3 class="text-xl font-bold mr-2">
+                  Hotel Operations & Guest Experience App
+                </h3>
+                <a target="_blank" href="https://www.vouch-technologies.com/"
+                  >https://www.vouch-technologies.com/</a
+                >
+              </div>
+              <p class="text-gray-500">Ts.ed - Vuejs - Mongodb</p>
+              <p class="text-gray-500">
+                The hotel staff management system enhances internal workflows,
+                making them more effective and efficient, while also providing a
+                guest platform to ensure a great experience when accessing hotel
+                facilities.
+              </p>
+            </div>
+            <div class="mb-4">
+              <h3 class="text-xl font-bold">RCS Hukumonline.com</h3>
+              <p class="text-gray-500">Elastic Search - Reactjs - NodeJS</p>
+              <p class="text-gray-500">
+                RCS app service by Hukumonline that manage task with dashboard
+                monitoring
+              </p>
+            </div>
+            <div class="mb-4">
+              <h3 class="text-xl font-bold">Warung Umat</h3>
+              <p class="text-gray-500">ReactJs</p>
+              <p class="text-gray-500">
+                A web platform that bridge between manufacturer and reseller
+              </p>
+            </div>
+            <div class="mb-4">
+              <div class="flex">
+                <h3 class="text-xl font-bold mr-2">Teknologi.id</h3>
+                <a target="_blank" href="https://teknologi.id/"
+                  >https://teknologi.id/</a
+                >
+              </div>
+              <p class="text-gray-500">Laravel - MySQL</p>
+              <p class="text-gray-500">
+                Media platform that bring latest technology news
+              </p>
+            </div>
+            <div class="mb-4">
+              <h3 class="text-xl font-bold">Canopy Plus</h3>
+              <p class="text-gray-500">Laravel - Vuejs - MySQL</p>
+              <p class="text-gray-500">
+                Broker/Insurance and Surveyor pool that we bridge through Canopy
+                to help them work together with trust in Australia
+              </p>
+            </div>
+            <div class="mb-4">
+              <div class="flex">
+                <h3 class="text-xl font-bold mr-2">JOVEE.ID</h3>
+                <a target="_blank" href="https://jovee.id/"
+                  >https://jovee.id/</a
+                >
+              </div>
+              <p class="text-gray-500">ReactJS - .NET - HTML - CSS</p>
+              <p class="text-gray-500">
+                Collaborating with Jira, work to contribute to Backend & IOS
+                team with large team developers its a new experience for me to
+                work with SCRUM and a little bit know how we work together with
+                so many developers in the team.
+              </p>
+            </div>
+            <div class="mb-4">
+              <div class="flex">
+                <h3 class="text-xl font-bold mr-2">RIIO</h3>
+                <a
+                  target="_blank"
+                  href="https://www.dropbox.com/home/Journey/RIIO"
+                  >https://link-attachment</a
+                >
+              </div>
+              <p class="text-gray-500">ReactJS - .NET - HTML - CSS</p>
+              <p class="text-gray-500">
+                RIIO third party money transfer services to various banks and
+                currencies using React for a user and admin display.
+              </p>
+            </div>
+            <div class="mb-4">
+              <h3 class="text-xl font-bold">ROBSJOBS</h3>
+              <p class="text-gray-500">Laravel - MYSQL - HTML - CSS</p>
+              <p class="text-gray-500">
+                Robsjobs is a job portal website, with international vacancies
+                accommodate jobseeker and employee with the unique business flow
+                for two of them.
+              </p>
+            </div>
+            <div class="mb-4">
+              <h3 class="text-xl font-bold">FINDSOR</h3>
+              <p class="text-gray-500">GOLANG - POSTGRES - QUASARJS</p>
+              <p class="text-gray-500">
+                Manage customer internal data who involved in insurance or
+                investment, use by Agen and internal Admin for easier data flow,
+                custom notification needed, report, chat, etc.
+              </p>
+            </div>
+            <div class="mb-4">
+              <h3 class="text-xl font-bold">AWCF Landing Page</h3>
+              <p class="text-gray-500">CODEIGNITER - MYSQL - HTML - CSS</p>
+              <p class="text-gray-500">
+                Asian Workers’ Compensation Forum (AWCF) was created in August
+                2010 as a platform for social security organizations from member
+                countries to share related information and experiences by means
+                of sessions, training programs, seminars, forums, mostly through
+                virtual platform.
+              </p>
+            </div>
+            <div class="mb-4">
+              <h3 class="text-xl font-bold">
+                CUNSOMER IDENTITY & ACCESS MANAGEMENT
+              </h3>
+              <p class="text-gray-500">ANGULAR - LUMEN - MYSQ</p>
+              <p class="text-gray-500">
+                change website duniagames.co.id auth, register, profile
+                management data flow, security in backend and frontend.
+              </p>
+            </div>
+            <div class="mb-4">
+              <h3 class="text-xl font-bold">BAZARUMAT</h3>
+              <p class="text-gray-500">WORDPRESS - MYSQL - HTML - CSS</p>
+              <p class="text-gray-500">
+                Managing Product Selling by PT Afra Insan Amanah , management
+                product, Customer, Reporting for more than thousand Customer
+                Agen and Reseller coding by 4 person in team.
+              </p>
+            </div>
+            <div class="mb-4">
+              <h3 class="text-xl font-bold">ITQON Bussiness</h3>
+              <p class="text-gray-500">CODEIGNITER - MYSQL - HTML - CSS</p>
+              <p class="text-gray-500">
+                Travel Hajj & Umrah CRM web application for managing Customer
+                from followup, payment, scheduling , determine room etc coding
+                by 1 person in team.
+              </p>
+            </div>
+            <div class="mb-4">
+              <h3 class="text-xl font-bold">Audiotext Pluginesia</h3>
+              <p class="text-gray-500">WORDPRESS - MYSQL - HTML - CSS</p>
+              <p class="text-gray-500">
+                Managing Product Selling by PT Afra , management product,
+                Customer, Reporting for more than thousand Customer Agen and
+                Reseller coding by 4 person in team.
+              </p>
+            </div>
+          </section>
+        </div>
+      </div>
     </div>
 
-    <div class="w-screen h-screen fixed top-0 left-0" id="game-container"></div>
-    <script src="assets/game.js"></script>
-</body>
+    <!-- <div class="w-screen h-screen fixed top-0 left-0" id="game-container"></div> -->
+    <!-- <script src="assets/game.js"></script> -->
+  </body>
 </html>
