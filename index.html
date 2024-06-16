@@ -22,7 +22,7 @@
       <div class="grid grid-cols-1 lg:grid-cols-2">
         <div>
           <!-- Contact Information -->
-          <section class="mb-8">
+          <section class="mb-4  ">
             <h2 class="text-2xl font-bold mb-4">About Me</h2>
             <div class="block lg:flex">
               <div
@@ -112,12 +112,17 @@
                 </li>
               </ul>
             </div>
-            <div class="flex items-center mt-1">
-              <div
-                class="text-sm font-semibold leading-6 text-gray-900 cursor-pointer"
-              >
-                Show more <span aria-hidden="true">→</span>
-              </div>
+            <div
+              class="text-sm font-semibold leading-6 text-gray-900 cursor-pointer mt-2"
+              id="toggleButton"
+            >
+              Show more <span aria-hidden="true">→</span>
+            </div>
+            <div
+              id="myElement"
+              class="hidden opacity-0 transition-opacity duration-500 ease-in-out"
+            >
+              This is the content to show/hide.
             </div>
           </section>
 
@@ -276,7 +281,7 @@
               <h2 class="text-4xl font-bold mb-4">Portofolio</h2>
               <div
                 id="countDown"
-                class="ml-2 bg-black text-xl rounded-full text-white w-9 h-9 font-bold flex justify-center items-center"
+                class="ml-2 bg-black text-xl rounded-full text-white w-9 h-9 font-bold flex justify-center items-center animate-bounce"
               >
                 10
               </div>
@@ -319,6 +324,14 @@
               <div class="flex justify-around content hidden">
                 <video autoplay loop muted preload="none">
                   <source src="./assets/video/HOME.webm" type="video/mp4" />
+                  Your browser does not support the video tag.
+                </video>
+              </div>
+
+              <!-- HOME -->
+              <div class="flex justify-around content hidden">
+                <video autoplay loop muted preload="none">
+                  <source src="./assets/video/HOMEPAGE.webm" type="video/mp4" />
                   Your browser does not support the video tag.
                 </video>
               </div>
@@ -494,44 +507,66 @@
       let contentTotal = document.getElementsByClassName("content").length;
       let index = 0;
       let countDownNumber = 10;
-			let intervalCountDown = null
-			const startCountDown = () => {
-				let countDownElement = document.getElementById("countDown");
-				if(intervalCountDown){
-					clearInterval(intervalCountDown)
-					countDownNumber = 10
-					countDownElement.textContent = countDownNumber;
-				}
+      let intervalCountDown = null;
+      const startCountDown = () => {
+        let countDownElement = document.getElementById("countDown");
+        if (intervalCountDown) {
+          clearInterval(intervalCountDown);
+          countDownNumber = 10;
+          countDownElement.textContent = countDownNumber;
+        }
 
-				intervalCountDown = setInterval(() => {
-					countDownNumber--;
-					if (countDownNumber < 0) countDownNumber = 10;
-					countDownElement.textContent = countDownNumber;
-				}, 1000);
-			}
+        intervalCountDown = setInterval(() => {
+          countDownNumber--;
+          if (countDownNumber < 0) countDownNumber = 10;
+          countDownElement.textContent = countDownNumber;
+        }, 1000);
+      };
 
-			document.addEventListener('DOMContentLoaded', () => {
-				startCountDown()
-	
-				setInterval(() => {
-					startCountDown()
-					index++;
-					if (index >= contentTotal) {
-						index = 0;
-					}
-					let prevIndex = index - 1;
-					if (document.getElementsByClassName("content")?.[prevIndex]) {
-						document
-							.getElementsByClassName("content")
-							[prevIndex].classList.add("hidden");
-					}
-	
-					document
-						.getElementsByClassName("content")
-						[index]?.classList?.remove("hidden");
-				}, 1000 * 10);
-			})
+      document.addEventListener("DOMContentLoaded", () => {
+        startCountDown();
 
+        setInterval(() => {
+          startCountDown();
+          index++;
+          if (index >= contentTotal) {
+            index = 0;
+          }
+          let prevIndex = index - 1;
+          if (document.getElementsByClassName("content")?.[prevIndex]) {
+            document
+              .getElementsByClassName("content")
+              [prevIndex].classList.add("hidden");
+          }
+
+          let willModifyElement =
+            document.getElementsByClassName("content")[index];
+          willModifyElement?.classList?.remove("hidden");
+        }, 1000 * 10);
+
+        const myElement = document.getElementById("myElement");
+        const toggleButton = document.getElementById("toggleButton");
+
+        toggleButton.addEventListener("click", () => {
+          if (myElement.classList.contains("hidden")) {
+            myElement.classList.remove("hidden");
+            setTimeout(() => {
+              myElement.classList.remove("opacity-0");
+              myElement.classList.add("opacity-100");
+            }, 10); // Small timeout to ensure the transition is applied
+          } else {
+            myElement.classList.remove("opacity-100");
+            myElement.classList.add("opacity-0");
+            myElement.addEventListener(
+              "transitionend",
+              () => {
+                myElement.classList.add("hidden");
+              },
+              { once: true }
+            );
+          }
+        });
+      });
     </script>
   </body>
 </html>
