@@ -3,7 +3,6 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <script src="https://pixijs.download/v7.3.3/pixi.min.js"></script>
     <link
       href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css"
       rel="stylesheet"
@@ -317,7 +316,7 @@
                   />
                   Your browser does not support the video tag.
                 </video>
-                <img src="./assets/img/sosialita1.png" class="h-96" />
+                <img src="./assets/img/sosialita1.png" loading="lazy" class="h-96" />
               </div>
 
               <!-- HOME -->
@@ -502,7 +501,6 @@
     </div>
 
     <!-- <div class="w-screen h-screen fixed top-0 left-0" id="game-container"></div> -->
-    <!-- <script src="assets/game.js"></script> -->
     <script>
       let contentTotal = document.getElementsByClassName("content").length;
       let index = 0;
