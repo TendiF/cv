@@ -1,8 +1,8 @@
 #!/bin/bash
 
 # Input video file
-input_file="sosialita_customer.mp4"
-output_file="output.mp4"
+input_file="HOMEPAGE.webm"
+output_file="output.webm"
 
 # Get the original bitrate
 original_bitrate=$(ffmpeg -i "$input_file" 2>&1 | grep bitrate | awk '{print $6}')
