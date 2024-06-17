@@ -26,12 +26,12 @@
             <div class="block lg:flex">
               <div
                 aria-hidden="true"
-                class="rounded-lg overflow-hidden w-44 lg:mr-3"
+                class="overflow-hidden w-44 lg:mr-3"
               >
                 <img
                   loading="lazy"
                   src="./assets/img/profile.jpg"
-                  class="object-cover h-48 w-full"
+                  class="object-cover h-48 w-full rounded-lg"
                 />
               </div>
               <ul>
@@ -119,9 +119,27 @@
             </div>
             <div
               id="myElement"
-              class="hidden opacity-0 transition-opacity duration-500 ease-in-out"
+              class="hidden opacity-0 transition-opacity duration-500 ease-in-out flex flex-wrap"
             >
-              This is the content to show/hide.
+              <img
+                loading="lazy"
+                src="./assets/img/family1.jpg"
+                class="object-cover h-72 w-48 rounded-lg mr-2 mt-2"
+              />
+              <div class="overflow-hidden h-72 w-48 rounded-lg mr-2 mt-2">
+                <video autoplay loop muted preload="none">
+                  <source
+                  src="./assets/video/hobymoto.mp4"
+                  type="video/mp4"
+                  />
+                  Your browser does not support the video tag.
+                </video>
+              </div>
+              <img
+                loading="lazy"
+                src="./assets/img/hoby1.jpg"
+                class="object-cover h-72 w-48 rounded-lg mr-2 mt-2"
+              />
             </div>
           </section>
 
@@ -547,12 +565,14 @@
 
         toggleButton.addEventListener("click", () => {
           if (myElement.classList.contains("hidden")) {
+            toggleButton.innerHTML = 'Hide <span aria-hidden="true">←</span>'
             myElement.classList.remove("hidden");
             setTimeout(() => {
               myElement.classList.remove("opacity-0");
               myElement.classList.add("opacity-100");
             }, 10); // Small timeout to ensure the transition is applied
           } else {
+            toggleButton.innerHTML = 'Show more <span aria-hidden="true">→</span>'
             myElement.classList.remove("opacity-100");
             myElement.classList.add("opacity-0");
             myElement.addEventListener(
