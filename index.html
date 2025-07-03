@@ -3,26 +3,40 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link
-      href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css"
-      rel="stylesheet"
-    />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+      tailwind.config = {
+        darkMode: 'class',
+        theme: {
+          extend: {}
+        }
+      }
+    </script>
     <link href="./assets/index.css" rel="stylesheet" />
     <title>Tendi Firmansyah - CV</title>
   </head>
-  <body class="bg-white dark:bg-black">
+  <body class="bg-white dark:bg-black text-gray-900 dark:text-gray-100">
+    <!-- Dark mode toggle button -->
+    <button class="dark-toggle" onclick="toggleDarkMode()" aria-label="Toggle dark mode">
+      <svg id="sun-icon" class="w-6 h-6 hidden" fill="currentColor" viewBox="0 0 20 20">
+        <path fill-rule="evenodd" d="M10 2a1 1 0 011 1v1a1 1 0 11-2 0V3a1 1 0 011-1zm4 8a4 4 0 11-8 0 4 4 0 018 0zm-.464 4.95l.707.707a1 1 0 001.414-1.414l-.707-.707a1 1 0 00-1.414 1.414zm2.12-10.607a1 1 0 010 1.414l-.706.707a1 1 0 11-1.414-1.414l.707-.707a1 1 0 011.414 0zM17 11a1 1 0 100-2h-1a1 1 0 100 2h1zm-7 4a1 1 0 011 1v1a1 1 0 11-2 0v-1a1 1 0 011-1zM5.05 6.464A1 1 0 106.465 5.05l-.708-.707a1 1 0 00-1.414 1.414l.707.707zm1.414 8.486l-.707.707a1 1 0 01-1.414-1.414l.707-.707a1 1 0 011.414 1.414zM4 11a1 1 0 100-2H3a1 1 0 000 2h1z" clip-rule="evenodd"></path>
+      </svg>
+      <svg id="moon-icon" class="w-6 h-6" fill="currentColor" viewBox="0 0 20 20">
+        <path d="M17.293 13.293A8 8 0 016.707 2.707a8.001 8.001 0 1010.586 10.586z"></path>
+      </svg>
+    </button>
     <div class="container mx-auto p-8">
       <!-- Header Section -->
       <header class="text-center mb-8">
         <h1 class="text-6xl font-bold">Tendi Firmansyah</h1>
-        <p class="text-xl text-gray-500">https://tendif.github.io/cv/</p>
-        <p class="text-gray-500">Product Developer</p>
+        <p class="text-xl text-gray-500 dark:text-gray-400">https://tendif.github.io/cv/</p>
+        <p class="text-gray-500 dark:text-gray-400">Product Developer</p>
       </header>
       <div class="grid grid-cols-1 lg:grid-cols-2">
         <div>
           <!-- Contact Information -->
           <section class="mb-4  ">
-            <h2 class="text-2xl font-bold mb-4">About Me</h2>
+            <h2 class="text-2xl font-bold mb-4 text-gray-900 dark:text-gray-100">About Me</h2>
             <div class="block lg:flex">
               <div
                 aria-hidden="true"
@@ -83,7 +97,7 @@
                     ></path>
                   </svg>
                   <a
-                    style="color: black"
+                    class="text-black dark:text-blue-400"
                     href="https://www.linkedin.com/in/tendi-firmansyah-53ab06b8"
                   >
                     tendi-firmansyah-53ab06b8
@@ -104,7 +118,7 @@
                     ></path>
                   </svg>
                   <a
-                    style="color: black"
+                    class="text-black dark:text-blue-400"
                     href="https://twitter.com/TendiFirmansyah"
                     >TendiFirmansyah</a
                   >
@@ -145,9 +159,9 @@
 
           <!-- Work Experience Section -->
           <section class="mb-8">
-            <h2 class="text-4xl font-bold mb-4">Work Experience</h2>
-            <div class="mb-4">
-              <h3 class="text-xl font-bold">Software Developer</h3>
+            <h2 class="text-4xl font-bold mb-4 text-gray-900 dark:text-gray-100">Work Experience</h2>
+            <div class="mb-4 work-item">
+              <h3 class="text-xl font-bold text-gray-900 dark:text-gray-100">Software Developer</h3>
               <p class="text-gray-500">
                 Vouch SG Pte. Ltd - Oct 2021 to Present
               </p>
@@ -165,8 +179,8 @@
                 <li>Collaborating with PM</li>
               </ul>
             </div>
-            <div class="mb-4">
-              <h3 class="text-xl font-bold">Full Stack Developer</h3>
+            <div class="mb-4 work-item">
+              <h3 class="text-xl font-bold text-gray-900 dark:text-gray-100">Full Stack Developer</h3>
               <p class="text-gray-500">
                 Tatsu Works Pte. Ltd. - May 2021 to Sep 2021
               </p>
@@ -176,8 +190,8 @@
                 <li>Collaborating with UI/UX Designer</li>
               </ul>
             </div>
-            <div class="mb-4">
-              <h3 class="text-xl font-bold">Full Stack Developer</h3>
+            <div class="mb-4 work-item">
+              <h3 class="text-xl font-bold text-gray-900 dark:text-gray-100">Full Stack Developer</h3>
               <p class="text-gray-500">
                 Sagara Technology - Dec 2018 to Jun 2021
               </p>
@@ -202,8 +216,8 @@
                 <li>Collaborating with UI/UX Designer</li>
               </ul>
             </div>
-            <div class="mb-4">
-              <h3 class="text-xl font-bold">Web Developer</h3>
+            <div class="mb-4 work-item">
+              <h3 class="text-xl font-bold text-gray-900 dark:text-gray-100">Web Developer</h3>
               <p class="text-gray-500">
                 PT Idekreatif Menusa Teknologi - May 2017 to Nov 2018
               </p>
@@ -219,8 +233,8 @@
                 <li>Design Database from requested feature</li>
               </ul>
             </div>
-            <div class="mb-4">
-              <h3 class="text-xl font-bold">Internship</h3>
+            <div class="mb-4 work-item">
+              <h3 class="text-xl font-bold text-gray-900 dark:text-gray-100">Internship</h3>
               <p class="text-gray-500">PT Arkamaya - Oct 2016 to Oct 2016</p>
               <ul class="list-disc ml-5 text-gray-500">
                 <li>and report the progress to senior dev</li>
@@ -233,69 +247,69 @@
         </div>
         <div>
           <section class="mb-8">
-            <h2 class="text-2xl font-bold mb-4">Tech Stacks</h2>
-            <div class="flex flex-wrap justify-around">
-              <div class="flex items-center">
-                <h3 class="text-lg font-bold mr-2">TS.ED</h3>
+            <h2 class="text-2xl font-bold mb-4 text-gray-900 dark:text-gray-100">Tech Stacks</h2>
+            <div class="flex flex-wrap">
+              <div class="tech-item">
+                <h3 class="text-lg font-bold mr-2 text-gray-900 dark:text-gray-100">TS.ED</h3>
                 <p class="text-gray-500">2 years</p>
               </div>
-              <div class="flex items-center">
-                <h3 class="text-lg font-bold mr-2">Nodejs</h3>
+              <div class="tech-item">
+                <h3 class="text-lg font-bold mr-2 text-gray-900 dark:text-gray-100">Nodejs</h3>
                 <p class="text-gray-500">3 years</p>
               </div>
-              <div class="flex items-center">
-                <h3 class="text-lg font-bold mr-2">MongoDB</h3>
+              <div class="tech-item">
+                <h3 class="text-lg font-bold mr-2 text-gray-900 dark:text-gray-100">MongoDB</h3>
                 <p class="text-gray-500">3 years</p>
               </div>
-              <div class="flex items-center">
-                <h3 class="text-lg font-bold mr-2">GRPC</h3>
+              <div class="tech-item">
+                <h3 class="text-lg font-bold mr-2 text-gray-900 dark:text-gray-100">GRPC</h3>
                 <p class="text-gray-500">8 Months</p>
               </div>
-              <div class="flex items-center">
-                <h3 class="text-lg font-bold mr-2">Gin Gonic</h3>
+              <div class="tech-item">
+                <h3 class="text-lg font-bold mr-2 text-gray-900 dark:text-gray-100">Gin Gonic</h3>
                 <p class="text-gray-500">7 Months</p>
               </div>
-              <div class="flex items-center">
-                <h3 class="text-lg font-bold mr-2">Code Igniter</h3>
+              <div class="tech-item">
+                <h3 class="text-lg font-bold mr-2 text-gray-900 dark:text-gray-100">Code Igniter</h3>
                 <p class="text-gray-500">1 Year 2 Months</p>
               </div>
-              <div class="flex items-center">
-                <h3 class="text-lg font-bold mr-2">Laravel</h3>
+              <div class="tech-item">
+                <h3 class="text-lg font-bold mr-2 text-gray-900 dark:text-gray-100">Laravel</h3>
                 <p class="text-gray-500">1 Year</p>
               </div>
-              <div class="flex items-center">
-                <h3 class="text-lg font-bold mr-2">Wordpress</h3>
+              <div class="tech-item">
+                <h3 class="text-lg font-bold mr-2 text-gray-900 dark:text-gray-100">Wordpress</h3>
                 <p class="text-gray-500">1 Year</p>
               </div>
-              <div class="flex items-center">
-                <h3 class="text-lg font-bold mr-2">Postgres</h3>
+              <div class="tech-item">
+                <h3 class="text-lg font-bold mr-2 text-gray-900 dark:text-gray-100">Postgres</h3>
                 <p class="text-gray-500">9 Months</p>
               </div>
-              <div class="flex items-center">
-                <h3 class="text-lg font-bold mr-2">MySQL</h3>
+              <div class="tech-item">
+                <h3 class="text-lg font-bold mr-2 text-gray-900 dark:text-gray-100">MySQL</h3>
                 <p class="text-gray-500">1 Year 7 Months</p>
               </div>
-              <div class="flex items-center">
-                <h3 class="text-lg font-bold mr-2">VueJs</h3>
+              <div class="tech-item">
+                <h3 class="text-lg font-bold mr-2 text-gray-900 dark:text-gray-100">VueJs</h3>
                 <p class="text-gray-500">2 Years</p>
               </div>
-              <div class="flex items-center">
-                <h3 class="text-lg font-bold mr-2">Swift IOS</h3>
+              <div class="tech-item">
+                <h3 class="text-lg font-bold mr-2 text-gray-900 dark:text-gray-100">Swift IOS</h3>
                 <p class="text-gray-500">5 Months</p>
               </div>
-              <div class="flex items-center">
-                <h3 class="text-lg font-bold mr-2">Docker</h3>
+              <div class="tech-item">
+                <h3 class="text-lg font-bold mr-2 text-gray-900 dark:text-gray-100">Docker</h3>
                 <p class="text-gray-500">8 Months</p>
               </div>
-              <div class="flex items-center">
-                <h3 class="text-lg font-bold mr-2">React</h3>
+              <div class="tech-item">
+                <h3 class="text-lg font-bold mr-2 text-gray-900 dark:text-gray-100">React</h3>
                 <p class="text-gray-500">1 Year</p>
               </div>
             </div>
           </section>
           <section class="mb-8">
             <div class="flex">
-              <h2 class="text-4xl font-bold mb-4">Portofolio</h2>
+              <h2 class="text-4xl font-bold mb-4 text-gray-900 dark:text-gray-100">Portofolio</h2>
               <div
                 id="countDown"
                 class="ml-2 bg-black text-xl rounded-full text-white w-9 h-9 font-bold flex justify-center items-center animate-bounce"
@@ -353,10 +367,11 @@
                 </video>
               </div>
             </div>
-            <div class="mb-4">
+            <div class="mb-4 portfolio-item">
               <div class="flex">
                 <h3 class="text-xl font-bold mr-2">Sosialita Customer</h3>
                 <a target="_blank" href="assets/video/sosialita_customer.mp4"
+                  class="text-blue-600 dark:text-blue-400 hover:underline"
                   >https://link-attachment</a
                 >
               </div>
@@ -365,12 +380,13 @@
                 website so anyone can sell branded fashion items easier
               </p>
             </div>
-            <div class="mb-4">
+            <div class="mb-4 portfolio-item">
               <div class="2xl:flex">
                 <h3 class="text-xl font-bold mr-2">
                   Hotel Operations & Guest Experience App
                 </h3>
                 <a target="_blank" href="https://www.vouch-technologies.com/"
+                  class="text-blue-600 dark:text-blue-400 hover:underline"
                   >https://www.vouch-technologies.com/</a
                 >
               </div>
@@ -382,25 +398,26 @@
                 facilities.
               </p>
             </div>
-            <div class="mb-4">
-              <h3 class="text-xl font-bold">RCS Hukumonline.com</h3>
+            <div class="mb-4 portfolio-item">
+              <h3 class="text-xl font-bold text-gray-900 dark:text-gray-100">RCS Hukumonline.com</h3>
               <p class="text-gray-500">Elastic Search - Reactjs - NodeJS</p>
               <p class="text-gray-500">
                 RCS app service by Hukumonline that manage task with dashboard
                 monitoring
               </p>
             </div>
-            <div class="mb-4">
-              <h3 class="text-xl font-bold">Warung Umat</h3>
+            <div class="mb-4 portfolio-item">
+              <h3 class="text-xl font-bold text-gray-900 dark:text-gray-100">Warung Umat</h3>
               <p class="text-gray-500">ReactJs</p>
               <p class="text-gray-500">
                 A web platform that bridge between manufacturer and reseller
               </p>
             </div>
-            <div class="mb-4">
+            <div class="mb-4 portfolio-item">
               <div class="flex">
                 <h3 class="text-xl font-bold mr-2">Teknologi.id</h3>
                 <a target="_blank" href="https://teknologi.id/"
+                  class="text-blue-600 dark:text-blue-400 hover:underline"
                   >https://teknologi.id/</a
                 >
               </div>
@@ -409,18 +426,19 @@
                 Media platform that bring latest technology news
               </p>
             </div>
-            <div class="mb-4">
-              <h3 class="text-xl font-bold">Canopy Plus</h3>
+            <div class="mb-4 portfolio-item">
+              <h3 class="text-xl font-bold text-gray-900 dark:text-gray-100">Canopy Plus</h3>
               <p class="text-gray-500">Laravel - Vuejs - MySQL</p>
               <p class="text-gray-500">
                 Broker/Insurance and Surveyor pool that we bridge through Canopy
                 to help them work together with trust in Australia
               </p>
             </div>
-            <div class="mb-4">
+            <div class="mb-4 portfolio-item">
               <div class="flex">
                 <h3 class="text-xl font-bold mr-2">JOVEE.ID</h3>
                 <a target="_blank" href="https://jovee.id/"
+                  class="text-blue-600 dark:text-blue-400 hover:underline"
                   >https://jovee.id/</a
                 >
               </div>
@@ -432,12 +450,13 @@
                 so many developers in the team.
               </p>
             </div>
-            <div class="mb-4">
+            <div class="mb-4 portfolio-item">
               <div class="flex">
                 <h3 class="text-xl font-bold mr-2">RIIO</h3>
                 <a
                   target="_blank"
                   href="https://www.dropbox.com/home/Journey/RIIO"
+                  class="text-blue-600 dark:text-blue-400 hover:underline"
                   >https://link-attachment</a
                 >
               </div>
@@ -447,8 +466,8 @@
                 currencies using React for a user and admin display.
               </p>
             </div>
-            <div class="mb-4">
-              <h3 class="text-xl font-bold">ROBSJOBS</h3>
+            <div class="mb-4 portfolio-item">
+              <h3 class="text-xl font-bold text-gray-900 dark:text-gray-100">ROBSJOBS</h3>
               <p class="text-gray-500">Laravel - MYSQL - HTML - CSS</p>
               <p class="text-gray-500">
                 Robsjobs is a job portal website, with international vacancies
@@ -456,8 +475,8 @@
                 for two of them.
               </p>
             </div>
-            <div class="mb-4">
-              <h3 class="text-xl font-bold">FINDSOR</h3>
+            <div class="mb-4 portfolio-item">
+              <h3 class="text-xl font-bold text-gray-900 dark:text-gray-100">FINDSOR</h3>
               <p class="text-gray-500">GOLANG - POSTGRES - QUASARJS</p>
               <p class="text-gray-500">
                 Manage customer internal data who involved in insurance or
@@ -465,8 +484,8 @@
                 custom notification needed, report, chat, etc.
               </p>
             </div>
-            <div class="mb-4">
-              <h3 class="text-xl font-bold">AWCF Landing Page</h3>
+            <div class="mb-4 portfolio-item">
+              <h3 class="text-xl font-bold text-gray-900 dark:text-gray-100">AWCF Landing Page</h3>
               <p class="text-gray-500">CODEIGNITER - MYSQL - HTML - CSS</p>
               <p class="text-gray-500">
                 Asian Workers’ Compensation Forum (AWCF) was created in August
@@ -476,8 +495,8 @@
                 virtual platform.
               </p>
             </div>
-            <div class="mb-4">
-              <h3 class="text-xl font-bold">
+            <div class="mb-4 portfolio-item">
+              <h3 class="text-xl font-bold text-gray-900 dark:text-gray-100">
                 CUNSOMER IDENTITY & ACCESS MANAGEMENT
               </h3>
               <p class="text-gray-500">ANGULAR - LUMEN - MYSQ</p>
@@ -486,8 +505,8 @@
                 management data flow, security in backend and frontend.
               </p>
             </div>
-            <div class="mb-4">
-              <h3 class="text-xl font-bold">BAZARUMAT</h3>
+            <div class="mb-4 portfolio-item">
+              <h3 class="text-xl font-bold text-gray-900 dark:text-gray-100">BAZARUMAT</h3>
               <p class="text-gray-500">WORDPRESS - MYSQL - HTML - CSS</p>
               <p class="text-gray-500">
                 Managing Product Selling by PT Afra Insan Amanah , management
@@ -495,8 +514,8 @@
                 Agen and Reseller coding by 4 person in team.
               </p>
             </div>
-            <div class="mb-4">
-              <h3 class="text-xl font-bold">ITQON Bussiness</h3>
+            <div class="mb-4 portfolio-item">
+              <h3 class="text-xl font-bold text-gray-900 dark:text-gray-100">ITQON Bussiness</h3>
               <p class="text-gray-500">CODEIGNITER - MYSQL - HTML - CSS</p>
               <p class="text-gray-500">
                 Travel Hajj & Umrah CRM web application for managing Customer
@@ -504,8 +523,8 @@
                 by 1 person in team.
               </p>
             </div>
-            <div class="mb-4">
-              <h3 class="text-xl font-bold">Audiotext Pluginesia</h3>
+            <div class="mb-4 portfolio-item">
+              <h3 class="text-xl font-bold text-gray-900 dark:text-gray-100">Audiotext Pluginesia</h3>
               <p class="text-gray-500">WORDPRESS - MYSQL - HTML - CSS</p>
               <p class="text-gray-500">
                 Managing Product Selling by PT Afra , management product,
@@ -520,6 +539,46 @@
 
     <!-- <div class="w-screen h-screen fixed top-0 left-0" id="game-container"></div> -->
     <script>
+      // Dark mode toggle functionality
+      function toggleDarkMode() {
+        document.documentElement.classList.toggle('dark');
+        const isDark = document.documentElement.classList.contains('dark');
+        localStorage.setItem('darkMode', isDark);
+        updateDarkModeIcon();
+      }
+
+      function updateDarkModeIcon() {
+        const isDark = document.documentElement.classList.contains('dark');
+        const sunIcon = document.getElementById('sun-icon');
+        const moonIcon = document.getElementById('moon-icon');
+        
+        if (isDark) {
+          sunIcon.classList.remove('hidden');
+          moonIcon.classList.add('hidden');
+        } else {
+          sunIcon.classList.add('hidden');
+          moonIcon.classList.remove('hidden');
+        }
+      }
+
+      // Check for saved dark mode preference on page load
+      if (localStorage.getItem('darkMode') === 'true') {
+        document.documentElement.classList.add('dark');
+      }
+      updateDarkModeIcon();
+
+      // Lazy loading images
+      const lazyImages = document.querySelectorAll('img[loading="lazy"]');
+      const imageObserver = new IntersectionObserver((entries, observer) => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add('loaded');
+            observer.unobserve(entry.target);
+          }
+        });
+      });
+      lazyImages.forEach(image => imageObserver.observe(image));
+
       let contentTotal = document.getElementsByClassName("content").length;
       let index = 0;
       let countDownNumber = 10;

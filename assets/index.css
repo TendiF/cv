@@ -1,3 +1,260 @@
+/* Base styles and animations */
+* {
+    transition: color 0.3s ease, background-color 0.3s ease, border-color 0.3s ease;
+}
+
 img {
     image-rendering: -webkit-optimize-contrast;
+}
+
+/* Smooth scroll behavior */
+html {
+    scroll-behavior: smooth;
+}
+
+/* Animation keyframes */
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+@keyframes scaleIn {
+    from {
+        transform: scale(0.9);
+        opacity: 0;
+    }
+    to {
+        transform: scale(1);
+        opacity: 1;
+    }
+}
+
+/* Apply animations to sections */
+section {
+    animation: fadeInUp 0.8s ease-out;
+}
+
+/* Header animations */
+header h1 {
+    animation: fadeInUp 1s ease-out;
+}
+
+header p {
+    animation: fadeIn 1.2s ease-out;
+}
+
+/* Hover effects for links */
+a {
+    position: relative;
+    transition: color 0.3s ease;
+}
+
+a::after {
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 2px;
+    bottom: -2px;
+    left: 0;
+    background-color: #3b82f6;
+    transition: width 0.3s ease;
+}
+
+a:hover::after {
+    width: 100%;
+}
+
+/* Dark mode styles */
+.dark a {
+    color: #60a5fa !important;
+}
+
+.dark a::after {
+    background-color: #60a5fa;
+}
+
+.dark svg {
+    fill: #9ca3af;
+}
+
+.dark .text-gray-500 {
+    color: #9ca3af !important;
+}
+
+.dark .text-gray-900 {
+    color: #f3f4f6 !important;
+}
+
+/* Image hover effects */
+img, video {
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+img:hover, video:hover {
+    transform: scale(1.05);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+}
+
+/* Tech stack item animations */
+.tech-item {
+    padding: 0.5rem 1rem;
+    margin: 0.25rem;
+    border-radius: 0.5rem;
+    background: #f3f4f6;
+    transition: all 0.3s ease;
+    display: inline-flex;
+    align-items: center;
+    cursor: default;
+}
+
+.tech-item:hover {
+    background: #3b82f6;
+    color: white;
+    transform: translateY(-3px);
+    box-shadow: 0 5px 15px rgba(59, 130, 246, 0.3);
+}
+
+.tech-item:hover * {
+    color: white !important;
+}
+
+.dark .tech-item {
+    background: #1f2937;
+}
+
+.dark .tech-item:hover {
+    background: #60a5fa;
+    color: #111827;
+}
+
+.dark .tech-item:hover * {
+    color: #111827 !important;
+}
+
+/* Work experience hover effects */
+.work-item {
+    padding: 1rem;
+    margin-bottom: 1rem;
+    border-radius: 0.5rem;
+    transition: all 0.3s ease;
+    border: 2px solid transparent;
+}
+
+.work-item:hover {
+    border-color: #3b82f6;
+    box-shadow: 0 5px 20px rgba(59, 130, 246, 0.1);
+    transform: translateX(10px);
+}
+
+.dark .work-item:hover {
+    border-color: #60a5fa;
+    box-shadow: 0 5px 20px rgba(96, 165, 250, 0.2);
+}
+
+/* Dark mode toggle button */
+.dark-toggle {
+    position: fixed;
+    top: 2rem;
+    right: 2rem;
+    width: 3rem;
+    height: 3rem;
+    border-radius: 50%;
+    background: #1f2937;
+    color: white;
+    border: none;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    z-index: 50;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+}
+
+.dark-toggle:hover {
+    transform: scale(1.1);
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.3);
+}
+
+.dark .dark-toggle {
+    background: #f3f4f6;
+    color: #1f2937;
+}
+
+/* Portfolio item animations */
+.portfolio-item {
+    opacity: 0;
+    animation: fadeIn 0.6s ease-out forwards;
+}
+
+.portfolio-item:nth-child(1) { animation-delay: 0.1s; }
+.portfolio-item:nth-child(2) { animation-delay: 0.2s; }
+.portfolio-item:nth-child(3) { animation-delay: 0.3s; }
+.portfolio-item:nth-child(4) { animation-delay: 0.4s; }
+.portfolio-item:nth-child(5) { animation-delay: 0.5s; }
+
+/* Smooth loading for lazy images */
+img[loading="lazy"] {
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+img[loading="lazy"].loaded {
+    opacity: 1;
+}
+
+/* Typography improvements */
+h1, h2, h3 {
+    font-weight: 700;
+    line-height: 1.2;
+}
+
+h1 {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+.dark h1 {
+    background: linear-gradient(135deg, #60a5fa 0%, #c084fc 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+/* Loading skeleton animation */
+@keyframes shimmer {
+    0% {
+        background-position: -1000px 0;
+    }
+    100% {
+        background-position: 1000px 0;
+    }
+}
+
+.skeleton {
+    background: linear-gradient(
+        90deg,
+        #f0f0f0 25%,
+        #e0e0e0 50%,
+        #f0f0f0 75%
+    );
+    background-size: 1000px 100%;
+    animation: shimmer 2s infinite;
 }
