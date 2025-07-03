@@ -656,7 +656,11 @@
         // Create navigation dots
         contentElements.forEach((_, index) => {
           const dot = document.createElement("button");
-          dot.className = `w-2 h-2 rounded-full bg-white/50 hover:bg-white/80 transition-colors ${index === 0 ? 'bg-white' : ''}`;
+          if (index === 0) {
+            dot.className = 'w-2 h-2 rounded-full bg-white hover:bg-white transition-colors';
+          } else {
+            dot.className = 'w-2 h-2 rounded-full bg-white/50 hover:bg-white/80 transition-colors';
+          }
           dot.setAttribute('aria-label', `Go to slide ${index + 1}`);
           dot.addEventListener("click", () => goToSlide(index));
           dotsContainer.appendChild(dot);
@@ -743,7 +747,11 @@
       function updateDots() {
         const dots = document.getElementById("dotsContainer").children;
         Array.from(dots).forEach((dot, index) => {
-          dot.className = `w-2 h-2 rounded-full bg-white/50 hover:bg-white/80 transition-colors ${index === currentIndex ? 'bg-white' : ''}`;
+          if (index === currentIndex) {
+            dot.className = 'w-2 h-2 rounded-full bg-white hover:bg-white transition-colors';
+          } else {
+            dot.className = 'w-2 h-2 rounded-full bg-white/50 hover:bg-white/80 transition-colors';
+          }
         });
       }
 
