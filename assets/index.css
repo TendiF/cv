@@ -62,6 +62,11 @@ header p {
 a {
     position: relative;
     transition: color 0.3s ease;
+    text-decoration: none !important;
+}
+
+a:hover {
+    text-decoration: none !important;
 }
 
 a::after {
@@ -87,6 +92,7 @@ a:hover::after {
 .dark a::after {
     background-color: #60a5fa;
 }
+
 
 .dark svg {
     fill: #9ca3af;
@@ -153,17 +159,20 @@ img:hover, video:hover {
     border-radius: 0.5rem;
     transition: all 0.3s ease;
     border: 2px solid transparent;
+    position: relative;
 }
 
 .work-item:hover {
     border-color: #3b82f6;
     box-shadow: 0 5px 20px rgba(59, 130, 246, 0.1);
-    transform: translateX(10px);
+    background-color: #f9fafb;
+    transform: scale(1.02);
 }
 
 .dark .work-item:hover {
     border-color: #60a5fa;
     box-shadow: 0 5px 20px rgba(96, 165, 250, 0.2);
+    background-color: #111827;
 }
 
 /* Dark mode toggle button */
@@ -258,3 +267,112 @@ h1 {
     background-size: 1000px 100%;
     animation: shimmer 2s infinite;
 }
+
+/* Portfolio showcase styles */
+#showcaseContainer {
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+}
+
+.dark #showcaseContainer {
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+}
+
+/* Smooth transitions for showcase content */
+.content {
+    transition: opacity 500ms ease-in-out;
+    will-change: opacity;
+}
+
+/* Ensure proper stacking context */
+#showcaseContainer .content {
+    pointer-events: none;
+}
+
+#showcaseContainer .content.opacity-100 {
+    pointer-events: none; /* Changed to none since click functionality is removed */
+}
+
+/* Navigation button hover effects */
+#prevBtn, #nextBtn {
+    transition: all 0.3s ease;
+    backdrop-filter: blur(10px);
+}
+
+#prevBtn:hover, #nextBtn:hover {
+    transform: scale(1.1);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+}
+
+/* Dot navigation styles */
+#dotsContainer button {
+    transition: all 0.3s ease;
+}
+
+#dotsContainer button:hover {
+    transform: scale(1.5);
+}
+
+/* Countdown styles */
+#countDown {
+    transition: all 0.3s ease;
+    font-variant-numeric: tabular-nums;
+}
+
+/* Pause/Play button effects */
+#pausePlayBtn {
+    transition: all 0.3s ease;
+}
+
+#pausePlayBtn:hover {
+    transform: scale(1.1);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+}
+
+/* Project title overlay animation */
+#projectTitle {
+    animation: fadeInUp 0.5s ease-out;
+    text-shadow: 0 2px 10px rgba(0, 0, 0, 0.5);
+}
+
+/* Video responsiveness */
+#showcaseContainer video {
+    object-fit: contain;
+}
+
+/* Focus styles for accessibility */
+button:focus-visible {
+    outline: 2px solid #3b82f6;
+    outline-offset: 2px;
+}
+
+.dark button:focus-visible {
+    outline-color: #60a5fa;
+}
+
+/* Portfolio item highlight animation */
+@keyframes highlight {
+    0% {
+        box-shadow: 0 0 0 0 rgba(59, 130, 246, 0.8);
+        transform: scale(1);
+    }
+    50% {
+        box-shadow: 0 0 20px 10px rgba(59, 130, 246, 0.3);
+        transform: scale(1.02);
+    }
+    100% {
+        box-shadow: 0 0 0 0 rgba(59, 130, 246, 0);
+        transform: scale(1);
+    }
+}
+
+.portfolio-item.highlight {
+    animation: highlight 2s ease-out;
+    border: 2px solid #3b82f6;
+    background-color: #eff6ff;
+}
+
+.dark .portfolio-item.highlight {
+    border-color: #60a5fa;
+    background-color: #1e293b;
+}
+
