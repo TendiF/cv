@@ -125,23 +125,29 @@
                 </li>
               </ul>
             </div>
-            <div
-              class="text-sm font-semibold leading-6 text-gray-900 cursor-pointer mt-2"
+            <button
+              class="text-sm font-semibold leading-6 text-gray-900 dark:text-gray-100 cursor-pointer mt-4 p-2 rounded-lg hover:bg-gray-100 dark:hover:bg-gray-800 transition-all duration-200 flex items-center gap-2"
               id="toggleButton"
+              type="button"
             >
-              Show more <span aria-hidden="true">→</span>
-            </div>
+              <span>Show more</span>
+              <span class="text-xs text-gray-500 dark:text-gray-400">(6 items)</span>
+              <svg class="w-4 h-4 transform transition-transform duration-300" id="toggleArrow" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
+              </svg>
+            </button>
             <div
               id="myElement"
-              class="hidden opacity-0 transition-opacity duration-500 ease-in-out flex flex-wrap"
+              class="hidden opacity-0 transition-all duration-500 ease-in-out grid grid-cols-2 sm:grid-cols-3 md:grid-cols-3 lg:grid-cols-3 gap-2 mt-4"
             >
               <img
                 loading="lazy"
                 src="./assets/img/family1.jpg"
-                class="object-cover h-72 w-48 rounded-lg mr-2 mt-2"
+                class="object-cover h-48 sm:h-64 md:h-72 w-full rounded-lg hover:scale-105 transition-transform duration-300"
+                alt="Family photo"
               />
-              <div class="overflow-hidden h-72 w-48 rounded-lg mr-2 mt-2">
-                <video autoplay loop muted preload="none">
+              <div class="overflow-hidden h-48 sm:h-64 md:h-72 w-full rounded-lg hover:scale-105 transition-transform duration-300">
+                <video autoplay loop muted preload="none" class="h-full w-full object-cover">
                   <source
                   src="./assets/video/hobymoto.mp4"
                   type="video/mp4"
@@ -152,7 +158,26 @@
               <img
                 loading="lazy"
                 src="./assets/img/hoby1.jpg"
-                class="object-cover h-72 w-48 rounded-lg mr-2 mt-2"
+                class="object-cover h-48 sm:h-64 md:h-72 w-full rounded-lg hover:scale-105 transition-transform duration-300"
+                alt="Hobby photo"
+              />
+              <img
+                loading="lazy"
+                src="./assets/img/personal_1.jpeg"
+                class="object-cover h-48 sm:h-64 md:h-72 w-full rounded-lg hover:scale-105 transition-transform duration-300"
+                alt="Personal photo"
+              />
+              <img
+                loading="lazy"
+                src="./assets/img/travel_1.jpeg"
+                class="object-cover h-48 sm:h-64 md:h-72 w-full rounded-lg hover:scale-105 transition-transform duration-300"
+                alt="Travel photo 1"
+              />
+              <img
+                loading="lazy"
+                src="./assets/img/travel_2.jpeg"
+                class="object-cover h-48 sm:h-64 md:h-72 w-full rounded-lg hover:scale-105 transition-transform duration-300"
+                alt="Travel photo 2"
               />
             </div>
           </section>
@@ -330,7 +355,7 @@
             <div class="relative rounded-lg overflow-hidden w-full bg-gray-100 dark:bg-gray-800" id="showcaseContainer">
               <div class="relative h-96 flex items-center justify-center">
                 <!-- Bespoke customer -->
-                <div class="absolute inset-0 flex justify-around items-center content opacity-100 transition-opacity duration-500" data-title="Hotel Operations & Guest Experience App">
+                <div class="absolute inset-0 flex justify-around items-center content opacity-100 transition-opacity duration-500" data-title="Guest Experience App">
                   <video autoplay loop muted playsinline preload="none" class="max-h-full max-w-full">
                     <source
                       src="./assets/video/BESPOKE_CUSTOMER.webm"
@@ -363,7 +388,7 @@
                 </div>
 
                 <!-- HOME -->
-                <div class="absolute inset-0 flex justify-around items-center content opacity-0 transition-opacity duration-500" data-title="RIIO">
+                <div class="absolute inset-0 flex justify-around items-center content opacity-0 transition-opacity duration-500" data-title="Hotel Operations">
                   <video autoplay loop muted playsinline preload="none" class="max-h-full max-w-full">
                     <source src="./assets/video/HOME.webm" type="video/webm" />
                     Your browser does not support the video tag.
@@ -379,17 +404,6 @@
                 </div>
               </div>
 
-              <!-- Navigation buttons -->
-              <button id="prevBtn" class="absolute left-2 top-1/2 -translate-y-1/2 p-2 bg-white/80 dark:bg-gray-800/80 rounded-full hover:bg-white dark:hover:bg-gray-800 transition-colors" aria-label="Previous">
-                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"></path>
-                </svg>
-              </button>
-              <button id="nextBtn" class="absolute right-2 top-1/2 -translate-y-1/2 p-2 bg-white/80 dark:bg-gray-800/80 rounded-full hover:bg-white dark:hover:bg-gray-800 transition-colors" aria-label="Next">
-                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
-                </svg>
-              </button>
 
               <!-- Project title overlay -->
               <div class="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/60 to-transparent p-4">
@@ -618,35 +632,6 @@
       let countdownTime = 10;
       const SLIDE_DURATION = 10000; // 10 seconds
       
-      // Function to check if navigation buttons should be shown
-      function updateNavigationButtons() {
-        const currentContent = contentElements[currentIndex];
-        const images = currentContent.querySelectorAll('img');
-        const videos = currentContent.querySelectorAll('video');
-        const prevBtn = document.getElementById('prevBtn');
-        const nextBtn = document.getElementById('nextBtn');
-        
-        let shouldHide = false;
-        
-        // Check all images and videos in current slide
-        [...images, ...videos].forEach(media => {
-          const rect = media.getBoundingClientRect();
-          const containerRect = document.getElementById('showcaseContainer').getBoundingClientRect();
-          
-          // If media width is close to container width (90% or more), hide buttons
-          if (rect.width >= containerRect.width * 0.9) {
-            shouldHide = true;
-          }
-        });
-        
-        if (shouldHide) {
-          prevBtn.style.display = 'none';
-          nextBtn.style.display = 'none';
-        } else {
-          prevBtn.style.display = 'block';
-          nextBtn.style.display = 'block';
-        }
-      }
 
       function initializeShowcase() {
         contentElements = Array.from(document.getElementsByClassName("content"));
@@ -675,22 +660,10 @@
           firstVideo.play().catch(e => console.log("Initial video play failed:", e));
         }
         
-        // Check initial navigation button visibility
-        setTimeout(() => {
-          updateNavigationButtons();
-        }, 100);
-        
-        // Update buttons on window resize
-        window.addEventListener('resize', () => {
-          updateNavigationButtons();
-        });
-        
         // Start autoplay
         startAutoPlay();
 
         // Setup event listeners
-        document.getElementById("prevBtn").addEventListener("click", previousSlide);
-        document.getElementById("nextBtn").addEventListener("click", nextSlide);
         document.getElementById("pausePlayBtn").addEventListener("click", togglePlayPause);
         
         // Pause on hover without resetting timer
@@ -713,11 +686,13 @@
             // Set timeout for remaining time, then continue normal autoplay
             autoPlayInterval = setTimeout(() => {
               if (!isPaused) {
-                nextSlide();
+                const nextIndex = (currentIndex + 1) % contentElements.length;
+                goToSlide(nextIndex);
                 // After this slide, resume normal autoplay
                 autoPlayInterval = setInterval(() => {
                   if (!isPaused) {
-                    nextSlide();
+                    const nextIdx = (currentIndex + 1) % contentElements.length;
+                    goToSlide(nextIdx);
                   }
                 }, SLIDE_DURATION);
               }
@@ -783,7 +758,6 @@
 
           updateProjectTitle();
           updateDots();
-          updateNavigationButtons(); // Check if nav buttons should be shown
         }, 300); // Increased delay for smoother transition
 
         // Reset countdown
@@ -792,15 +766,6 @@
         }
       }
 
-      function nextSlide() {
-        const nextIndex = (currentIndex + 1) % contentElements.length;
-        goToSlide(nextIndex);
-      }
-
-      function previousSlide() {
-        const prevIndex = (currentIndex - 1 + contentElements.length) % contentElements.length;
-        goToSlide(prevIndex);
-      }
 
       function startAutoPlay() {
         if (autoPlayInterval) clearInterval(autoPlayInterval);
@@ -809,7 +774,8 @@
         
         autoPlayInterval = setInterval(() => {
           if (!isPaused) {
-            nextSlide();
+            const nextIndex = (currentIndex + 1) % contentElements.length;
+            goToSlide(nextIndex);
           }
         }, SLIDE_DURATION);
       }
@@ -857,12 +823,6 @@
         if (e.target.tagName === 'INPUT' || e.target.tagName === 'TEXTAREA') return;
         
         switch(e.key) {
-          case 'ArrowLeft':
-            previousSlide();
-            break;
-          case 'ArrowRight':
-            nextSlide();
-            break;
           case ' ':
           case 'p':
             e.preventDefault();
@@ -882,23 +842,44 @@
 
         const myElement = document.getElementById("myElement");
         const toggleButton = document.getElementById("toggleButton");
+        const toggleArrow = document.getElementById("toggleArrow");
+        const buttonText = toggleButton.querySelector("span:first-child");
 
         toggleButton.addEventListener("click", () => {
           if (myElement.classList.contains("hidden")) {
-            toggleButton.innerHTML = 'Hide <span aria-hidden="true">←</span>'
+            // Show content
+            buttonText.textContent = "Hide";
+            toggleArrow.classList.add("rotate-90");
             myElement.classList.remove("hidden");
+            
             setTimeout(() => {
               myElement.classList.remove("opacity-0");
               myElement.classList.add("opacity-100");
-            }, 10); // Small timeout to ensure the transition is applied
+              
+              // Smooth scroll to the expanded content
+              setTimeout(() => {
+                myElement.scrollIntoView({ 
+                  behavior: 'smooth', 
+                  block: 'nearest'
+                });
+              }, 100);
+            }, 10);
           } else {
-            toggleButton.innerHTML = 'Show more <span aria-hidden="true">→</span>'
+            // Hide content
+            buttonText.textContent = "Show more";
+            toggleArrow.classList.remove("rotate-90");
             myElement.classList.remove("opacity-100");
             myElement.classList.add("opacity-0");
+            
             myElement.addEventListener(
               "transitionend",
               () => {
                 myElement.classList.add("hidden");
+                // Scroll back to button if needed
+                toggleButton.scrollIntoView({ 
+                  behavior: 'smooth', 
+                  block: 'center'
+                });
               },
               { once: true }
             );
