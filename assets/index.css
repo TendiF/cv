@@ -1,4 +1,14 @@
 /* Base styles and animations */
+@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&display=swap');
+
+:root {
+  --font-sans: 'Outfit', system-ui, -apple-system, sans-serif;
+}
+
+body {
+    font-family: var(--font-sans);
+}
+
 * {
     transition: color 0.3s ease, background-color 0.3s ease, border-color 0.3s ease;
 }
@@ -12,11 +22,37 @@ html {
     scroll-behavior: smooth;
 }
 
+/* Glassmorphism Utilities */
+.glass {
+    background: rgba(255, 255, 255, 0.7);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.3);
+}
+
+.dark .glass {
+    background: rgba(31, 41, 55, 0.7); /* gray-800 with opacity */
+    border: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.glass-card {
+    background: rgba(255, 255, 255, 0.8);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    border: 1px solid rgba(255, 255, 255, 0.5);
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+}
+
+.dark .glass-card {
+    background: rgba(17, 24, 39, 0.8); /* gray-900 with opacity */
+    border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
 /* Animation keyframes */
 @keyframes fadeInUp {
     from {
         opacity: 0;
-        transform: translateY(30px);
+        transform: translateY(20px);
     }
     to {
         opacity: 1;
@@ -33,25 +69,25 @@ html {
     }
 }
 
-@keyframes scaleIn {
+@keyframes slideInRight {
     from {
-        transform: scale(0.9);
         opacity: 0;
+        transform: translateX(-20px);
     }
     to {
-        transform: scale(1);
         opacity: 1;
+        transform: translateX(0);
     }
 }
 
 /* Apply animations to sections */
 section {
-    animation: fadeInUp 0.8s ease-out;
+    animation: fadeInUp 0.8s cubic-bezier(0.16, 1, 0.3, 1); /* Smoother bezier */
 }
 
 /* Header animations */
 header h1 {
-    animation: fadeInUp 1s ease-out;
+    animation: fadeInUp 1s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
 header p {
@@ -76,8 +112,8 @@ a::after {
     height: 2px;
     bottom: -2px;
     left: 0;
-    background-color: #3b82f6;
-    transition: width 0.3s ease;
+    background: linear-gradient(90deg, #3b82f6, #8b5cf6); /* Gradient underline */
+    transition: width 0.3s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 a:hover::after {
@@ -88,11 +124,6 @@ a:hover::after {
 .dark a {
     color: #60a5fa !important;
 }
-
-.dark a::after {
-    background-color: #60a5fa;
-}
-
 
 .dark svg {
     fill: #9ca3af;
@@ -108,72 +139,55 @@ a:hover::after {
 
 /* Image hover effects */
 img, video {
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    transition: transform 0.5s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.5s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
 img:hover, video:hover {
-    transform: scale(1.05);
-    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+    transform: scale(1.02);
+    box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
 }
 
-/* Tech stack item animations */
+/* Tech stack item - Grid styling handled in Tailwind, just hover effects here */
 .tech-item {
-    padding: 0.5rem 1rem;
-    margin: 0.25rem;
-    border-radius: 0.5rem;
-    background: #f3f4f6;
-    transition: all 0.3s ease;
-    display: inline-flex;
-    align-items: center;
-    cursor: default;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .tech-item:hover {
+    transform: translateY(-5px);
+}
+
+
+/* Timeline Styles */
+.timeline-line {
+    position: absolute;
+    left: 0;
+    top: 5px; /* Adjust based on dot vertical alignment */
+    bottom: 0;
+    width: 2px;
+    background: #e5e7eb;
+}
+
+.dark .timeline-line {
+    background: #374151;
+}
+
+.timeline-dot {
+    position: absolute;
+    left: -5px; /* (12px dot width - 2px line width) / 2 */
+    top: 6px; /* Align with title */
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
     background: #3b82f6;
-    color: white;
-    transform: translateY(-3px);
-    box-shadow: 0 5px 15px rgba(59, 130, 246, 0.3);
+    border: 2px solid #fff;
+    box-shadow: 0 0 0 2px rgba(59, 130, 246, 0.3);
 }
 
-.tech-item:hover * {
-    color: white !important;
-}
-
-.dark .tech-item {
-    background: #1f2937;
-}
-
-.dark .tech-item:hover {
+.dark .timeline-dot {
     background: #60a5fa;
-    color: #111827;
+    border-color: #1f2937;
 }
 
-.dark .tech-item:hover * {
-    color: #111827 !important;
-}
-
-/* Work experience hover effects */
-.work-item {
-    padding: 1rem;
-    margin-bottom: 1rem;
-    border-radius: 0.5rem;
-    transition: all 0.3s ease;
-    border: 2px solid transparent;
-    position: relative;
-}
-
-.work-item:hover {
-    border-color: #3b82f6;
-    box-shadow: 0 5px 20px rgba(59, 130, 246, 0.1);
-    background-color: #f9fafb;
-    transform: scale(1.02);
-}
-
-.dark .work-item:hover {
-    border-color: #60a5fa;
-    box-shadow: 0 5px 20px rgba(96, 165, 250, 0.2);
-    background-color: #111827;
-}
 
 /* Dark mode toggle button */
 .dark-toggle {
@@ -183,26 +197,34 @@ img:hover, video:hover {
     width: 3rem;
     height: 3rem;
     border-radius: 50%;
-    background: #1f2937;
-    color: white;
-    border: none;
+    /* frosted glass effect */
+    background: rgba(255, 255, 255, 0.5);
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
+    color: #1f2937;
+    border: 1px solid rgba(0,0,0,0.1);
+
     cursor: pointer;
     transition: all 0.3s ease;
     z-index: 50;
     display: flex;
     align-items: center;
     justify-content: center;
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
 }
 
 .dark-toggle:hover {
-    transform: scale(1.1);
-    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.3);
+    transform: rotate(15deg) scale(1.1);
+    background: rgba(255, 255, 255, 0.8);
 }
 
 .dark .dark-toggle {
-    background: #f3f4f6;
-    color: #1f2937;
+    background: rgba(31, 41, 55, 0.6);
+    color: #f3f4f6;
+    border: 1px solid rgba(255,255,255,0.1);
+}
+.dark .dark-toggle:hover {
+    background: rgba(31, 41, 55, 0.9);
 }
 
 /* Portfolio item animations */
@@ -220,7 +242,7 @@ img:hover, video:hover {
 /* Smooth loading for lazy images */
 img[loading="lazy"] {
     opacity: 0;
-    transition: opacity 0.3s ease;
+    transition: opacity 0.5s ease;
 }
 
 img[loading="lazy"].loaded {
@@ -231,17 +253,18 @@ img[loading="lazy"].loaded {
 h1, h2, h3 {
     font-weight: 700;
     line-height: 1.2;
+    letter-spacing: -0.02em; /* Tighter tracking for display fonts */
 }
 
 h1 {
-    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    background: linear-gradient(135deg, #2563eb 0%, #7c3aed 100%); /* Blue to Purple */
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     background-clip: text;
 }
 
 .dark h1 {
-    background: linear-gradient(135deg, #60a5fa 0%, #c084fc 100%);
+    background: linear-gradient(135deg, #60a5fa 0%, #a78bfa 100%); /* Light Blue to Light Purple */
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     background-clip: text;
@@ -270,16 +293,16 @@ h1 {
 
 /* Portfolio showcase styles */
 #showcaseContainer {
-    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
 }
 
 .dark #showcaseContainer {
-    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+    box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.5), 0 10px 10px -5px rgba(0, 0, 0, 0.3);
 }
 
 /* Smooth transitions for showcase content */
 .content {
-    transition: opacity 500ms ease-in-out;
+    transition: opacity 700ms cubic-bezier(0.4, 0, 0.2, 1);
     will-change: opacity;
 }
 
@@ -289,7 +312,7 @@ h1 {
 }
 
 #showcaseContainer .content.opacity-100 {
-    pointer-events: none; /* Changed to none since click functionality is removed */
+    pointer-events: none;
 }
 
 /* Navigation button hover effects */
@@ -305,11 +328,11 @@ h1 {
 
 /* Dot navigation styles */
 #dotsContainer button {
-    transition: all 0.3s ease;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 #dotsContainer button:hover {
-    transform: scale(1.5);
+    transform: scale(1.2);
 }
 
 /* Countdown styles */
@@ -331,7 +354,7 @@ h1 {
 /* Project title overlay animation */
 #projectTitle {
     animation: fadeInUp 0.5s ease-out;
-    text-shadow: 0 2px 10px rgba(0, 0, 0, 0.5);
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
 }
 
 /* Video responsiveness */
@@ -349,30 +372,26 @@ button:focus-visible {
     outline-color: #60a5fa;
 }
 
-/* Portfolio item highlight animation */
-@keyframes highlight {
-    0% {
-        box-shadow: 0 0 0 0 rgba(59, 130, 246, 0.8);
-        transform: scale(1);
-    }
-    50% {
-        box-shadow: 0 0 20px 10px rgba(59, 130, 246, 0.3);
-        transform: scale(1.02);
-    }
-    100% {
-        box-shadow: 0 0 0 0 rgba(59, 130, 246, 0);
-        transform: scale(1);
-    }
+/* Scrollbar styling */
+::-webkit-scrollbar {
+    width: 8px;
+    height: 8px;
 }
 
-.portfolio-item.highlight {
-    animation: highlight 2s ease-out;
-    border: 2px solid #3b82f6;
-    background-color: #eff6ff;
+::-webkit-scrollbar-track {
+    background: transparent;
 }
 
-.dark .portfolio-item.highlight {
-    border-color: #60a5fa;
-    background-color: #1e293b;
+::-webkit-scrollbar-thumb {
+    background: #cbd5e1;
+    border-radius: 4px;
 }
-
+.dark ::-webkit-scrollbar-thumb {
+    background: #4b5563;
+}
+::-webkit-scrollbar-thumb:hover {
+    background: #94a3b8;
+}
+.dark ::-webkit-scrollbar-thumb:hover {
+    background: #6b7280;
+}
